@@ -8,7 +8,5 @@
 ?>
 <div class="container">
     <div class="row">
-        <div class="col-lg-6"><h1>Home page</h1></div>
-    </div>
-</div>
-
+        <div class="col-lg-8">left section of page</div>
+ 
