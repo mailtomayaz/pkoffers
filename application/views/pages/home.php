@@ -9,13 +9,13 @@
   <section id="intro">
     <ul id="slippry-slider">
       <li>
-        <a href="#slide1"><img src="assets/img/slide/1.jpg" alt="Welcome to Groovin!"></a>
+        <a href="#slide1"><img src="<?php echo base_url(); ?>/img/slide/1.jpg" alt="Welcome to Groovin!"></a>
       </li>
       <li>
-        <a href="#slide2"><img src="assets/img/slide/2.jpg"  alt="This is an awesome bootstrap template"></a>
+        <a href="#slide2"><img src="<?php echo base_url(); ?>/img/slide/2.jpg"  alt="This is an awesome bootstrap template"></a>
       </li>
       <li>
-        <a href="#slide3"><img src="assets/img/slide/3.jpg" alt="Check it out, you are going to <span class='red'>♥</span> it :)"></a>
+        <a href="#slide3"><img src="<?php echo base_url(); ?>/img/slide/3.jpg" alt="Check it out, you are going to <span class='red'>♥</span> it :)"></a>
       </li>
     </ul>
   </section>
@@ -125,7 +125,7 @@
 								<img src="assets/img/portfolio/1.jpg" alt="" />
 							</a>
             </li>
-            <li><a href="assets/img/portfolio/2.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/2.jpg" alt="" /></a></li>
+            <li><a href="img/portfolio/2.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/2.jpg" alt="" /></a></li>
             <li><a href="assets/img/portfolio/3.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/3.jpg" alt="" /></a></li>
             <li><a href="assets/img/portfolio/4.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/4.jpg" alt="" /></a></li>
             <li><a href="assets/img/portfolio/5.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/5.jpg" alt="" /></a></li>
