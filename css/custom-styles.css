@@ -1794,9 +1794,12 @@ a.socialIcon:hover, .socialHoverClass {
 }
 .siteoptions ul li{
     list-style: none;
+    padding:8px 0px;
 }
 .siteoptions ul li a{
     text-transform: uppercase;
+    text-decoration: none;
+    color:#fff;
 }
 .crkh{
     font-weight: bold;
