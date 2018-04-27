@@ -1,45 +1,22 @@
 <?php
-/*
+
+/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 ?>
-  <!-- section intro -->
-  <section id="intro">
-      <div class="wrapersiteoption">
-      <div class="siteoptions">
-          <ul>
-              <li> <a href="<?php echo base_url(); ?>index.php/deals"> Deals</a></li>
-              <li> <a href="<?php echo base_url(); ?>/investments"> Investments</a></li>
-              <li> <a href="<?php echo base_url(); ?>/charity"> Charity</a></li>
-          </ul>
-      </div>
-      </div>
-    <ul id="slippry-slider">
-      <li>
-        <a href="#slide1"><img src="<?php echo base_url(); ?>/img/slide/1.jpg" alt=""></a>
-      </li>
-      <li>
-        <a href="#slide2"><img src="<?php echo base_url(); ?>/img/slide/2.jpg"  alt=""></a>
-      </li>
-      <li>
-        <a href="#slide3"><img src="<?php echo base_url(); ?>/img/slide/3.jpg" alt=""></a>
-      </li>
-    </ul>
-  </section>
-   
-<!--      section works 
-  <section id="works" class="section gray">
+ <section id="works" class="section gray">
     <div class="container">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="heading">
-            <h3><span>Recent works</span></h3>
+            <h3><span>Deals</span></h3>
           </div>
           <div class="sub-heading">
             <p>
-              We have a history of doing what our name implies, creating a visual language around the beliefs of the brands we work with.
+             s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
             </p>
           </div>
         </div>
@@ -70,6 +47,3 @@
       </div>
     </div>
   </section>
-   section works 
- 
-   end section contact -->
