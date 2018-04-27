@@ -304,7 +304,7 @@ header{
 }
 
 .navbar.navbar-inverse {
-    padding:10px 0;
+    padding:0px 0;
     margin:0;
 
 }
@@ -1797,4 +1797,7 @@ a.socialIcon:hover, .socialHoverClass {
 }
 .siteoptions ul li a{
     text-transform: uppercase;
+}
+.crkh{
+    font-weight: bold;
 }

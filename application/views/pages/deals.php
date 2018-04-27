@@ -23,26 +23,62 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <ul class="grid effect" id="grid">
-            <li>
-              <a class="fancybox" data-fancybox-group="gallery" title="Portfolio name" href="assets/img/portfolio/1.jpg">
-								<img src="assets/img/portfolio/1.jpg" alt="" />
-							</a>
-            </li>
-            <li><a href="img/portfolio/2.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/2.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/3.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/3.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/4.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/4.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/5.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/5.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/6.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/6.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/7.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/7.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/8.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/8.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/9.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/9.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/10.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/10.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/11.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/11.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/12.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/12.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/13.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/13.jpg" alt="" /></a></li>
-            <li><a href="assets/img/portfolio/14.jpg" class="fancybox" data-fancybox-group="gallery" title="Portfolio name"><img src="assets/img/portfolio/14.jpg" alt="" /></a></li>
-          </ul>
+          <form action="/action_page.php"> 
+
+            <table class="table">
+    <thead>
+<!--      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>-->
+    </thead>
+    <tbody>
+      <tr>
+            <td>
+            <div class="form-group">
+    <label for="email">Province:</label>
+    <select class="form-control">
+        <option>KPK</option>
+        <option>Punjab</option>
+        <option>Sindh</option>
+         <option>Blochistan</option>
+    </select>
+
+  </div></td>
+        <td>
+            <div class="form-group">
+    <label for="email">City:</label>
+    <select class="form-control">
+        <option>Haripur</option>
+        <option>Abotabad</option>
+        <option>Multan</option>
+    </select>
+
+  </div></td>
+     <td>
+            <div class="form-group">
+    <label for="email">Category:</label>
+    <select class="form-control">
+        <option>Cloths</option>
+        <option>Shoes</option>
+        <option>Grossory</option>
+    </select>
+
+  </div></td>
+      
+        
+  <td> 
+      <label for=""></label>
+      <button type="submit" class="btn btn-default">Submit</button>
+  </td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  
+  </form>
         </div>
       </div>
     </div>

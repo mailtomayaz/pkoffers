@@ -1,14 +1,14 @@
 <footer>
-    <div class="verybottom">
+    <div class="verybottom crkh">
       <div class="container">
-        <div class="row">
+
           <div class="col-md-12">
             <div class="aligncenter">
               <p>
                 &copy; khaysoft.com  All right reserved
               </p>
             
-            </div>
+       
           </div>
         </div>
       </div>
