@@ -54,3 +54,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$route['translate_uri_dashes'] = FALSE;
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
+
+$route['admin/dashboard'] = 'admin/admin';
+
+//brands routes
+$route['admin/brands'] = 'admin/brands';
+$route['admin/brands/create'] = 'admin/brands/create';
+$route['admin/brands/edit/(:any)'] = 'admin/brands/edit/$1';
+
+//categories routes
+$route['admin/categories'] = 'admin/categories';
+$route['admin/categories/create'] = 'admin/categories/create';
+$route['admin/categories/edit/(:any)'] = 'admin/categories/edit/$1';
+
+//products routes
+$route['admin/products'] = 'admin/products';
+$route['admin/products/create'] = 'admin/products/create';
+$route['admin/products/edit/(:any)'] = 'admin/products/edit/$1';
