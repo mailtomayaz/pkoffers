@@ -16,4 +16,5 @@ class Admin extends Admin_Controller{
      //   $data['module'] = 'auth';
         $this->load->view($this->_container, $data);
     }
+
 }

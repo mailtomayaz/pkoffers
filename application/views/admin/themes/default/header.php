@@ -279,7 +279,7 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="<?= base_url('sheriffadmin/admin') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="<?= base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
                                 <a href="<?= base_url('admin/brands') ?>"><i class="fa fa-table fa-fw"></i> Brands</a>
