@@ -55,7 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'pages/view';
 $route['(:any)'] = 'pages/view/$1';
 
-$route['admin/dashboard'] = 'admin/admin';
+$route['sheriffadmin/dashboard'] = 'sheriffadmin/admin';
 
 //brands routes
 $route['admin/brands'] = 'admin/brands';
