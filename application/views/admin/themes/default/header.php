@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>CI My Admin</title>
+        <title>AllPkOffers Admin</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="<?= base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= base_url('admin/dashboard') ?>">CI My Admin v1.0</a>
+                    <a class="navbar-brand" href="<?= base_url('admin/dashboard') ?>">AllPkOffers Admin</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -255,7 +255,8 @@
                             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+<!--                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
+                           <li><a href="<?=  base_url('auth/logout')?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->

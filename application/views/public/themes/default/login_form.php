@@ -1,12 +1,3 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-?>
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -15,7 +6,13 @@
                     <h3 class="panel-title">Please Sign In</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form" method="POST" action="<?=  base_url()?>admin/dashboard">
+                    <?php if ($this->session->flashdata('message')): ?>
+                        <div class="alert alert-danger fade in">
+                            <a href="#" class="close" data-dismiss="alert">&times;</a>
+                            <?= $this->session->flashdata('message') ?>
+                        </div>
+                    <?php endif; ?>
+                    <form role="form" method="POST" action="<?= base_url('auth/login') ?>">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
