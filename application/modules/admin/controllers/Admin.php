@@ -12,7 +12,7 @@ class Admin extends Admin_Controller{
           $this->load->library(array('ion_auth'));
 
     if (!$this->ion_auth->logged_in()) {
-        redirect('/auth', 'refresh');
+        redirect('/auth/index', 'refresh');
     }
         log_message('debug', 'CI My Admin : Auth class loaded');
     }

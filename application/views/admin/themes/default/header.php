@@ -283,13 +283,19 @@
                                 <a href="<?= base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/brands') ?>"><i class="fa fa-table fa-fw"></i> Brands</a>
+                                <a href="<?= base_url('admin/brands') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/categories') ?>"><i class="fa fa-edit fa-fw"></i> Categories</a>
+                                <a href="<?= base_url('admin/categories') ?>"><i class="fa fa-edit fa-fw"></i> Investment</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/products') ?>"><i class="fa fa-edit fa-fw"></i> Products</a>
+                                <a href="<?= base_url('admin/products') ?>"><i class="fa fa-edit fa-fw"></i> Charity</a>
+                            </li>
+                             <li>
+                                <a href="<?= base_url('admin/content') ?>"><i class="fa fa-edit fa-fw"></i> Content</a>
+                            </li>
+                            <li>
+                                <a href="<?= base_url('admin/users') ?>"><i class="fa fa-edit fa-fw"></i> Users</a>
                             </li>
                         </ul>
                     </div>
