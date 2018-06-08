@@ -2,6 +2,8 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Dashboard</h1>
+            <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
+            
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -76,4 +78,6 @@
     </div>
 
 </div>
+
+
 <!-- /#page-wrapper -->
