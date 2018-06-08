@@ -4,7 +4,7 @@
             <div class="page-header users-header">
                 <h2>
                     Products
-                    <a  href="<?= base_url('admin/products/create') ?>" class="btn btn-success">Add a new</a>
+                    <a  href="<?php base_url('admin/products/create') ?>" class="btn btn-success">Add a new</a>
                 </h2>
             </div>
         </div>
@@ -41,8 +41,8 @@
                                     <td>48</td>
                                     <td>300</td>
                                     <td>
-                                        <a href="<?= base_url('admin/products/edit/1') ?>" class="btn btn-info">edit</a>  
-                                        <a href="<?= base_url('admin/products/delete/1') ?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php base_url('admin/products/edit/1') ?>" class="btn btn-info">edit</a>  
+                                        <a href="<?php base_url('admin/products/delete/1') ?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
                                 <tr class="even gradeC">
@@ -53,8 +53,8 @@
                                     <td>22</td>
                                     <td>33</td>
                                     <td>
-                                        <a href="<?= base_url('admin/products/edit/2') ?>" class="btn btn-info">edit</a>  
-                                        <a href="<?= base_url('admin/products/delete/2') ?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php base_url('admin/products/edit/2') ?>" class="btn btn-info">edit</a>  
+                                        <a href="<?php base_url('admin/products/delete/2') ?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
                             </tbody>

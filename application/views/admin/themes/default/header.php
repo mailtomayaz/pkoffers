@@ -12,21 +12,21 @@
         <title>AllPkOffers Admin</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="<?= base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
-        <link href="<?= base_url() ?>assets/admin/css/metisMenu.min.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/admin/css/metisMenu.min.css" rel="stylesheet">
 
         <!-- DataTables CSS -->
-        <link href="<?= base_url() ?>assets/admin/css/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/admin/css/dataTables.bootstrap.css" rel="stylesheet">
 
         <!-- DataTables Responsive CSS -->
-        <link href="<?= base_url() ?>assets/admin/css/dataTables.responsive.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/admin/css/dataTables.responsive.css" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="<?= base_url() ?>assets/admin/css/sb-admin-2.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/admin/css/sb-admin-2.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="<?= base_url() ?>assets/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="<?php echo base_url() ?>assets/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +50,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="<?= base_url('admin/dashboard') ?>">AllPkOffers Admin</a>
+                    <a class="navbar-brand" href="<?php echo base_url('admin/dashboard') ?>">AllPkOffers Admin</a>
                 </div>
                 <!-- /.navbar-header -->
 
@@ -256,7 +256,7 @@
                             </li>
                             <li class="divider"></li>
 <!--                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
-                           <li><a href="<?=  base_url('auth/logout')?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                           <li><a href="<?php echo base_url('auth/logout')?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                             </li>
                         </ul>
                         <!-- /.dropdown-user -->
@@ -280,22 +280,22 @@
                                 <!-- /input-group -->
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/brands') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
+                                <a href="<?php echo base_url('admin/brands') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/categories') ?>"><i class="fa fa-edit fa-fw"></i> Investment</a>
+                                <a href="<?php echo base_url('admin/categories') ?>"><i class="fa fa-edit fa-fw"></i> Investment</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/products') ?>"><i class="fa fa-edit fa-fw"></i> Charity</a>
+                                <a href="<?php echo base_url('admin/products') ?>"><i class="fa fa-edit fa-fw"></i> Charity</a>
                             </li>
                              <li>
-                                <a href="<?= base_url('admin/content') ?>"><i class="fa fa-edit fa-fw"></i> Content</a>
+                                <a href="<?php echo base_url('admin/content') ?>"><i class="fa fa-edit fa-fw"></i> Content</a>
                             </li>
                             <li>
-                                <a href="<?= base_url('admin/users') ?>"><i class="fa fa-edit fa-fw"></i> Users</a>
+                                <a href="<?php echo base_url('admin/users') ?>"><i class="fa fa-edit fa-fw"></i> Users</a>
                             </li>
                         </ul>
                     </div>

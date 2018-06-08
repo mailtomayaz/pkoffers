@@ -9,10 +9,10 @@
                     <?php if ($this->session->flashdata('message')): ?>
                         <div class="alert alert-danger fade in">
                             <a href="#" class="close" data-dismiss="alert">&times;</a>
-                            <?= $this->session->flashdata('message') ?>
+                            <?php $this->session->flashdata('message') ?>
                         </div>
                     <?php endif; ?>
-                    <form role="form" method="POST" action="<?= base_url('auth/login') ?>">
+                    <form role="form" method="POST" action="<?php echo base_url('auth/login') ?>">
                         <fieldset>
                             <div class="form-group">
                                 <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>

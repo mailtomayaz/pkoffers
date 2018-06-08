@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <h2>
                 Products
-                <a  href="<?= base_url('admin/products') ?>" class="btn btn-warning">Go back to products listing</a>
+                <a  href="<?php base_url('admin/products') ?>" class="btn btn-warning">Go back to products listing</a>
             </h2>
         </div>
         <!-- /.col-lg-12 -->

@@ -4,7 +4,7 @@
       <div class="page-header users-header">
         <h2>
           Brands
-          <a  href="<?=base_url('admin/brands/create')?>" class="btn btn-success">Add a new</a>
+          <a  href="<?phpbase_url('admin/brands/create')?>" class="btn btn-success">Add a new</a>
         </h2>
       </div>
         </div>
@@ -37,8 +37,8 @@
                                     <td>Win 95+</td>
                                     <td>4</td>
                                     <td>
-                                        <a href="<?=base_url('admin/brands/edit/1')?>" class="btn btn-info">edit</a>  
-                                        <a href="<?=base_url('admin/brands/delete/1')?>" class="btn btn-danger">delete</a>
+                                        <a href="<?phpbase_url('admin/brands/edit/1')?>" class="btn btn-info">edit</a>  
+                                        <a href="<?phpbase_url('admin/brands/delete/1')?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
                                 <tr class="even gradeC">
@@ -47,8 +47,8 @@
                                     <td>Win 95+</td>
                                     <td>5</td>
                                     <td>
-                                        <a href="<?=base_url('admin/brands/edit/2')?>" class="btn btn-info">edit</a>  
-                                        <a href="<?=base_url('admin/brands/delete/2')?>" class="btn btn-danger">delete</a>
+                                        <a href="<?phpbase_url('admin/brands/edit/2')?>" class="btn btn-info">edit</a>  
+                                        <a href="<?phpbase_url('admin/brands/delete/2')?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
                             </tbody>

@@ -357,7 +357,7 @@ if (method_exists($this, '_ci_object_to_array'))
 
 		if ((bool) @ini_get('short_open_tag') === FALSE && CI::$APP->config->item('rewrite_short_tags') == TRUE)
 		{
-			echo eval('?>'.preg_replace("/;*\s*\?>/", "; ?>", str_replace('<?=', '<?php echo ', file_get_contents($_ci_path))));
+			echo eval('?>'.preg_replace("/;*\s*\?>/", "; ?>", str_replace('<?php', '<?php echo ', file_get_contents($_ci_path))));
 		}
 		else
 		{

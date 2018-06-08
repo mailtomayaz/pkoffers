@@ -17,6 +17,7 @@ class Auth extends MY_Controller {
     }
 
     public function index() {
+     
         if ($this->ion_auth->logged_in()) {
             redirect('admin/dashboard', 'refresh');
         } else {
@@ -55,8 +56,7 @@ class Auth extends MY_Controller {
 
     public function logout() {
         $this->ion_auth->logout();
-
-        redirect('auth', 'refresh');
+        redirect('auth/index', 'refresh');
     }
 
 }
