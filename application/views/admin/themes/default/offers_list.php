@@ -3,8 +3,8 @@
         <div class="col-lg-12">
       <div class="page-header users-header">
         <h2>
-          Brands
-          <a  href="<?php base_url('admin/brands/create')?>" class="btn btn-success">Add a new</a>
+          Offers
+          <a  href="<?php echo base_url('admin/offers/create')?>" class="btn btn-success">Add a new</a>
         </h2>
       </div>
         </div>
@@ -15,7 +15,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Brands listing
+                    Offers listing
                 </div>
                 <!-- /.panel-heading -->
                 <div class="panel-body">
@@ -23,7 +23,7 @@
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
-                                    <th>Brand ID</th>
+                                    <th>Offer ID</th>
                                     <th>Description</th>
                                     <th>Created From IP</th>
                                     <th>Updated From IP</th>
@@ -37,8 +37,8 @@
                                     <td>Win 95+</td>
                                     <td>4</td>
                                     <td>
-                                        <a href="<?php base_url('admin/brands/edit/1')?>" class="btn btn-info">edit</a>  
-                                        <a href="<?php base_url('admin/brands/delete/1')?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php echo base_url('admin/offers/edit/1')?>" class="btn btn-info">edit</a>  
+                                        <a href="<?php echo base_url('admin/offers/delete/1')?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
                                 <tr class="even gradeC">
@@ -47,14 +47,14 @@
                                     <td>Win 95+</td>
                                     <td>5</td>
                                     <td>
-                                        <a href="<?php base_url('admin/brands/edit/2')?>" class="btn btn-info">edit</a>  
-                                        <a href="<?php base_url('admin/brands/delete/2')?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php echo base_url('admin/offers/edit/2')?>" class="btn btn-info">edit</a>  
+                                        <a href="<?php echo base_url('admin/offers/delete/2')?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
                             </tbody>
                             <tfooter>
                                 <tr>
-                                    <th>Brand ID</th>
+                                    <th>Offer ID</th>
                                     <th>Description</th>
                                     <th>Created From IP</th>
                                     <th>Updated From IP</th>

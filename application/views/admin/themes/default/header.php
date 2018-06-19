@@ -283,7 +283,7 @@
                                 <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="<?php echo base_url('admin/brands') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
+                                <a href="<?php echo base_url('admin/offers') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('admin/categories') ?>"><i class="fa fa-edit fa-fw"></i> Investment</a>
