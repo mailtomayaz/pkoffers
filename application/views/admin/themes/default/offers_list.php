@@ -1,3 +1,7 @@
+<?php 
+//echo "<pre>";
+//print_r($result);
+?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
@@ -25,39 +29,37 @@
                                 <tr>
                                     <th>Offer ID</th>
                                     <th>Description</th>
-                                    <th>Created From IP</th>
-                                    <th>Updated From IP</th>
+                                    <th>Phone</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="odd gradeX">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 4.0</td>
-                                    <td>Win 95+</td>
-                                    <td>4</td>
+                                <?php 
+                                foreach($result as $offer){
+                                 ?>
+                                  <tr class="odd gradeX">
+                                    <td><?php echo $offer->id ?></td>
+                                    <td><?php echo $offer->description ?></td>
+                                     <td><?php echo $offer->phone ?></td>
+                                     <td><?php echo $offer->image ?></td>
                                     <td>
-                                        <a href="<?php echo base_url('admin/offers/edit/1')?>" class="btn btn-info">edit</a>  
-                                        <a href="<?php echo base_url('admin/offers/delete/1')?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php echo base_url('admin/offers/edit/'.$offer->id )?>" class="btn btn-info">edit</a>  
+                                        <a href="<?php echo base_url('admin/offers/delete/'.$offer->id )?>" class="btn btn-danger">delete</a>
                                     </td>
                                 </tr>
-                                <tr class="even gradeC">
-                                    <td>Trident</td>
-                                    <td>Internet Explorer 5.0</td>
-                                    <td>Win 95+</td>
-                                    <td>5</td>
-                                    <td>
-                                        <a href="<?php echo base_url('admin/offers/edit/2')?>" class="btn btn-info">edit</a>  
-                                        <a href="<?php echo base_url('admin/offers/delete/2')?>" class="btn btn-danger">delete</a>
-                                    </td>
-                                </tr>
+                                <?php 
+                                }
+                                ?>
+                              
+                               
                             </tbody>
                             <tfooter>
                                 <tr>
-                                    <th>Offer ID</th>
+                                  <th>Offer ID</th>
                                     <th>Description</th>
-                                    <th>Created From IP</th>
-                                    <th>Updated From IP</th>
+                                    <th>Phone</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </tfooter>
