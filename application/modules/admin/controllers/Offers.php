@@ -29,6 +29,7 @@ class Offers extends Admin_Controller {
     }
 //edit view of offers
         public function edit($id) {
+       $data['result']=$this->offers_model->getOfferById($id);
         $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "offers_edit";
         $this->load->view($this->_container, $data);
     }  

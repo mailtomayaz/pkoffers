@@ -34,5 +34,11 @@ class Offers_model extends CI_Model {
         }
         // print_r($arrData);
     }
+    //get offer by ID
+    
+   public function getOfferById($id){
+       $query = $this->db->query("SELECT * FROM offers where id=$id");
+        return $query->result();
+   }
 
 }
