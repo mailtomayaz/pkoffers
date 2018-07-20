@@ -27,7 +27,8 @@
 
         <!-- Custom Fonts -->
         <link href="<?php echo base_url() ?>assets/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+   <!-- Custom Fonts -->
+        <link href="<?php echo base_url() ?>assets/admin/css/custom-styles.css" rel="stylesheet" type="text/css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -296,6 +297,12 @@
                             </li>
                             <li>
                                 <a href="<?php echo base_url('admin/users') ?>"><i class="fa fa-edit fa-fw"></i> Users</a>
+                            </li>
+                             <li>
+                                <a href="<?php echo base_url('admin/cities') ?>"><i class="fa fa-edit fa-fw"></i> Cities</a>
+                            </li>
+                             <li>
+                                <a href="<?php echo base_url('admin/provinces') ?>"><i class="fa fa-edit fa-fw"></i> Provinces</a>
                             </li>
                         </ul>
                     </div>

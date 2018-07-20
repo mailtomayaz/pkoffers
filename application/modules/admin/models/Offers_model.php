@@ -30,7 +30,7 @@ class Offers_model extends CI_Model {
         if ($this->db->affected_rows() != 1) {
             return false;
         } else {
-            true;
+           return true;
         }
         // print_r($arrData);
     }
