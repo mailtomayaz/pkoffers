@@ -97,7 +97,7 @@ switch (ENVIRONMENT)
  * This variable must contain the name of your "system" directory.
  * Set the path if it is not in the same directory as this file.
  */
-	$system_path = '/home/ayazm/web/html/pkoffers/system';
+	$system_path = '/var/www/html/pkoffers/system';
 
 /*
  *---------------------------------------------------------------
@@ -114,7 +114,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = '/home/ayazm/web/html/pkoffers/application';
+	$application_folder = '/var/www/html/pkoffers/application';
 
 /*
  *---------------------------------------------------------------

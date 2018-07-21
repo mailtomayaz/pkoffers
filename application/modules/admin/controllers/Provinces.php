@@ -42,7 +42,7 @@ class Provinces extends Admin_Controller {
            $isInsert =  $this->provinces_model->insert_province($data);
          
            if($isInsert){
-           
+            $this->session->set_flashdata('message', 'Added Successfully!');
             redirect('/admin/provinces', 'refresh');
            
            }
@@ -57,7 +57,7 @@ class Provinces extends Admin_Controller {
            $isInsert =  $this->provinces_model->update($data);
          
            if($isInsert){
-           
+            $this->session->set_flashdata('message', 'Updated Successfully!');
             redirect('/admin/provinces', 'refresh');
            
            }

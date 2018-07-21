@@ -12,8 +12,11 @@ class Offers extends Admin_Controller {
     function __construct() {
         parent::__construct();
         $this->load->model('offers_model');
+         $this->load->model('provinces_model');
+          $this->load->model('city_model');
         // $this->load->helper('url');
         $this->load->helper(array('form', 'url'));
+          $this->load->library('session'); 
     }
 
 //display list of offers
@@ -26,6 +29,9 @@ class Offers extends Admin_Controller {
 
 //add form view
     public function create() {
+        //get cities
+       $data['provinces_list']=$this->provinces_model->getList(); 
+        $data['cities_list']=$this->city_model->getList(); 
         $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "offers_create";
         $this->load->view($this->_container, $data);
     }
@@ -56,6 +62,7 @@ class Offers extends Admin_Controller {
             }
             $isInsert = $this->offers_model->insert_offer($data);
             if ($isInsert) {
+                 $this->session->set_flashdata('message', 'Added Successfully!');
                 redirect('/admin/offers', 'refresh');
             }
         }

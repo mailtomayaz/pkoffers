@@ -19,26 +19,27 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <form role="form" action="<?php echo base_url('admin/offers/offer_add') ?>" method="post" enctype="multipart/form-data">
-
-                                <div class="form-group">
+                                  <div class="form-group">
                                     <label>Province</label>
-                                    <select name='province_id' class="form-control" placeholder="Enter Province Name">
-                                        <option value="1">KPK</option>
-                                        <option value="2">Punjab</option>
-                                        <option value="3">Sind</option>
-                                        <option value="4">Blochistan</option>
-                                    </select>
-
+                                     
+                                     <select name='province_id' class="form-control">
+                                         <?php foreach($provinces_list as $pro){
+                                            ?>
+                                         <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
+                                         <?php 
+                                         } ?>
+                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>City</label>
-                                    <select name='city_id' class="form-control" placeholder="Enter City Name">
-                                        <option value="1">KPK</option>
-                                        <option value="2">Punjab</option>
-                                        <option value="3">Sind</option>
-                                        <option value="4">Blochistan</option>
-                                    </select>
-
+                                
+ <select name='city_id' class="form-control">
+                                         <?php foreach($cities_list as $pro){
+                                            ?>
+                                         <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
+                                         <?php 
+                                         } ?>
+                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Name</label>
