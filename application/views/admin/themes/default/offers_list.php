@@ -5,6 +5,14 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
+
+            <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
       <div class="page-header users-header">
         <h2>
           Offers
@@ -31,6 +39,8 @@
                                     <th>Description</th>
                                     <th>Phone</th>
                                     <th>Image</th>
+                                    <th>Province</th>
+                                    <th>City</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -42,8 +52,23 @@
                                     <td><?php echo $offer->id ?></td>
                                     <td><?php echo $offer->description ?></td>
                                      <td><?php echo $offer->phone ?></td>
-                                     <td><?php echo $offer->image ?></td>
-                                    <td>
+                                     <td><img width="200" height="100" src="<?php  echo base_url().'/uploads/'.$offer->image; ?>"><?php // echo $offer->image ?></td>
+                                     <td><?php
+                                     foreach($provinces_list as $prov){
+                                     if($offer->province_id ==  $prov->id){
+                                         echo $prov->name;
+                                     }
+                                     }
+                                             ?></td>
+                                    <td><?php 
+                                     foreach($cities_list as $city){
+                                     if($offer->city_id ==  $city->id){
+                                         echo $city->name;
+                                     }
+                                     }
+                                    //echo $offer->city_id
+                                            ?></td>
+                                     <td>
                                         <a href="<?php echo base_url('admin/offers/edit/'.$offer->id )?>" class="btn btn-info">edit</a>  
                                         <a href="<?php echo base_url('admin/offers/delete/'.$offer->id )?>" class="btn btn-danger">delete</a>
                                     </td>

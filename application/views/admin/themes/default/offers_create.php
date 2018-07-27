@@ -19,27 +19,27 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <form role="form" action="<?php echo base_url('admin/offers/offer_add') ?>" method="post" enctype="multipart/form-data">
-                                  <div class="form-group">
+                                <div class="form-group">
                                     <label>Province</label>
-                                     
-                                     <select name='province_id' class="form-control">
-                                         <?php foreach($provinces_list as $pro){
+
+                                    <select name='province_id' class="form-control">
+                                        <?php foreach ($provinces_list as $pro) {
                                             ?>
-                                         <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
-                                         <?php 
-                                         } ?>
-                                     </select>
+                                            <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
+                                            <?php }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>City</label>
-                                
- <select name='city_id' class="form-control">
-                                         <?php foreach($cities_list as $pro){
+
+                                    <select name='city_id' class="form-control">
+                                        <?php foreach ($cities_list as $pro) {
                                             ?>
-                                         <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
-                                         <?php 
-                                         } ?>
-                                     </select>
+                                            <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
+                                            <?php }
+                                        ?>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Name</label>
@@ -61,6 +61,17 @@
                                 <div class="form-group">
                                     <label>Image</label>
                                     <input type="file" name="userfile" class="form-control" placeholder="Upload Image" >
+                                </div>
+                                   <div class="form-group">
+                                    <label>Status</label>
+
+                                    <select name='is_active' class="form-control">
+                                        
+                                            <option value="1"> Enable</option>
+                                             <option value="2"> Disable</option>
+                                            
+                                        
+                                    </select>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit Button</button>
                                 <button type="reset" class="btn btn-default">Reset Button</button>

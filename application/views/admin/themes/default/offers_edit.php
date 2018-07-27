@@ -1,6 +1,6 @@
 <?php
 //echo "<pre>";
-print_r($result);
+//print_r($result);
 ?>
 <div id="page-wrapper">
     <div class="row">
@@ -22,25 +22,27 @@ print_r($result);
                 <div class="panel-body">
                      <div class="row">
                         <div class="col-lg-6">
-                            <form role="form" action="<?php echo base_url('admin/offers/offer_add') ?>" method="post" enctype="multipart/form-data">
+                            <form role="form" action="<?php echo base_url('admin/offers/update/'.$result[0]->id) ?>" method="post" enctype="multipart/form-data">
 
                                 <div class="form-group">
                                     <label>Province</label>
-                                    <select name='province_id' class="form-control" placeholder="Enter Province Name">
-                                        <option value="1">KPK</option>
-                                        <option value="2">Punjab</option>
-                                        <option value="3">Sind</option>
-                                        <option value="4">Blochistan</option>
+                                    <select name='province_id' class="form-control">
+                                        <?php foreach ($provinces_list as $pro) {
+                                            ?>
+                                            <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
+                                            <?php }
+                                        ?>
                                     </select>
 
                                 </div>
                                 <div class="form-group">
                                     <label>City</label>
-                                    <select name='city_id' class="form-control" placeholder="Enter City Name">
-                                        <option value="1">KPK</option>
-                                        <option value="2">Punjab</option>
-                                        <option value="3">Sind</option>
-                                        <option value="4">Blochistan</option>
+                                     <select name='city_id' class="form-control">
+                                        <?php foreach ($cities_list as $pro) {
+                                            ?>
+                                            <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
+                                            <?php }
+                                        ?>
                                     </select>
 
                                 </div>
@@ -63,12 +65,12 @@ print_r($result);
 
                                 <div class="form-group">
                                     <label>Image</label>
-                                    <?php echo $result[0]->image; ?>
+                                    <img src="<?php echo  base_url().'/uploads/'. $result[0]->image; ?>" width="200" height="100">
                                     <input type="file" name="userfile" class="form-control" placeholder="Upload Image"  >
                                 </div>
                                  <div class="form-group">
                                     <label>Active</label>
-                                    <select class="form-control" name="isactive">
+                                    <select class="form-control" name="is_active">
                                         <?php
                                         $yes='';
                                         $no='';
@@ -81,7 +83,7 @@ print_r($result);
                                          <option value="0" <?php echo $no ?> >No</option>
                                     </select>
                                 </div>
-                                  <div class="form-group">
+<!--                                  <div class="form-group">
                                     <label>Deleted</label>
                                        <?php
                                         $yes='';
@@ -91,11 +93,11 @@ print_r($result);
                                         }else{
                                            $no='selected'; 
                                         }   ?>
-                                    <select class="form-control" name="isactive">
+                                    <select class="form-control" name="is_active">
                                         <option value="1" <?php echo $yes ?>>Yes</option>
                                          <option value="0" <?php  echo $no ?>>No</option>
                                     </select>
-                                </div>
+                                </div>-->
                                 <button type="submit" class="btn btn-primary">Submit Button</button>
                                 <button type="reset" class="btn btn-default">Reset Button</button>
                             </form>

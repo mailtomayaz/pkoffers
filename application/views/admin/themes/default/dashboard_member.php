@@ -1,15 +1,12 @@
-<?php 
-//$usrGroup= $this->session->userdata('groups');
-//if(in_array(1, $usrGroup)){
-//    echo "I am admin";
-//}else{
-//    echo "I am member";
-//}
+<?php // 
+print_r($this->session->userdata());
+echo "<pre>";
+
 ?>
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">Dashboard Member</h1>
             <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
             
         </div>

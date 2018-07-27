@@ -27,7 +27,7 @@
 
         <!-- Custom Fonts -->
         <link href="<?php echo base_url() ?>assets/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-   <!-- Custom Fonts -->
+        <!-- Custom Fonts -->
         <link href="<?php echo base_url() ?>assets/admin/css/custom-styles.css" rel="stylesheet" type="text/css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -257,12 +257,12 @@
                             </li>
                             <li class="divider"></li>
 <!--                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
-                           <li><a href="<?php echo base_url('auth/logout')?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-user -->
+                            <li><a href="<?php echo base_url('auth/logout') ?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                     </li>
-                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
                 </ul>
                 <!-- /.navbar-top-links -->
 
@@ -280,34 +280,44 @@
                                 </div>
                                 <!-- /input-group -->
                             </li>
-                            <li>
+                            <?php
+                            $usrGroup = $this->session->userdata('groups');
+                            if (in_array(1, $usrGroup)) {?>
+                                   <li>
                                 <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
-                            <li>
-                                <a href="<?php echo base_url('admin/offers') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
-                            </li>
+
                             <li>
                                 <a href="<?php echo base_url('admin/categories') ?>"><i class="fa fa-edit fa-fw"></i> Investment</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('admin/products') ?>"><i class="fa fa-edit fa-fw"></i> Charity</a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="<?php echo base_url('admin/content') ?>"><i class="fa fa-edit fa-fw"></i> Content</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('admin/users') ?>"><i class="fa fa-edit fa-fw"></i> Users</a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="<?php echo base_url('admin/cities') ?>"><i class="fa fa-edit fa-fw"></i> Cities</a>
                             </li>
-                             <li>
+                            <li>
                                 <a href="<?php echo base_url('admin/provinces') ?>"><i class="fa fa-edit fa-fw"></i> Provinces</a>
                             </li>
+                            <li>
+                                <a href="<?php echo base_url('admin/offers') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
+                            </li>
+                            <?php } else {?>
+                                <li>
+                                <a href="<?php echo base_url('admin/offers') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
+                            </li>
+                          <?php  }
+                            ?>
+                        
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
                 </div>
                 <!-- /.navbar-static-side -->
             </nav>
-           

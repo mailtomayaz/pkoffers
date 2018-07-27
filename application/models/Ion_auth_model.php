@@ -2018,6 +2018,11 @@ class Ion_auth_model extends CI_Model
 		    'old_last_login'       => $user->last_login,
 		    'last_check'           => time(),
 		);
+//get user group ids for user and pass to session
+    $groups = $this->ion_auth->get_users_groups($user->id)->result();
+    foreach ($groups as $row){
+        $session_data['groups'][] = $row->id;
+    }
 
 		$this->session->set_userdata($session_data);
 
