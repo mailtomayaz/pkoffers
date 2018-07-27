@@ -309,6 +309,9 @@
                                 <a href="<?php echo base_url('admin/offers') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
                             </li>
                             <?php } else {?>
+                               <li>
+                                <a href="<?php echo base_url('admin/dashboard') ?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            </li>
                                 <li>
                                 <a href="<?php echo base_url('admin/offers') ?>"><i class="fa fa-table fa-fw"></i> Offers</a>
                             </li>
