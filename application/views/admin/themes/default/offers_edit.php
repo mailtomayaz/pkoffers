@@ -1,8 +1,20 @@
-<?php
-//echo "<pre>";
-//print_r($result);
-?>
 <div id="page-wrapper">
+         <div class="row">
+        <div class="col-lg-12">
+
+            <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+        <div class="row">
+        <div class="col-lg-12">
+
+            <div id="infoMessageError"><?php echo $this->session->flashdata('error'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h2>

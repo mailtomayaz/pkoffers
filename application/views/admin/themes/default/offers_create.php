@@ -1,4 +1,20 @@
 <div id="page-wrapper">
+     <div class="row">
+        <div class="col-lg-12">
+
+            <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+        <div class="row">
+        <div class="col-lg-12">
+
+            <div id="infoMessageError"><?php echo $this->session->flashdata('error'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <h2>
@@ -18,6 +34,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-6">
+                            <?php echo validation_errors(); ?>
                             <form role="form" action="<?php echo base_url('admin/offers/offer_add') ?>" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Province</label>

@@ -1,25 +1,18 @@
 <?php
 
-class Users extends Admin_Controller {
+class Userprofile extends Admin_Controller {
 
     function __construct() {
-        parent::__construct();
-        $this->load->library(array('ion_auth'));
-        $group = 'admin';
-
-        if (!$this->ion_auth->in_group($group)) {
-            $this->session->set_flashdata('message', 'You must be an administrator to view the users page.');
-            redirect('admin/dashboard');
-        }
+       parent::__construct();
+       $this->load->helper(array('form', 'url'));
+        $this->load->library(array('ion_auth', 'form_validation', 'session'));
     }
 
     public function index() {
-        $users = $this->ion_auth->users()->result();
-//        echo "<pre>";
-//        print_r($users);
-//die('test');
-        $data['users'] = $users;
-        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "users_list";
+        $user = $this->ion_auth->user()->row();
+
+        $data['user'] = $user;
+        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "user_profile";
         $this->load->view($this->_container, $data);
     }
 

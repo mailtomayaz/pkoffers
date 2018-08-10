@@ -20,6 +20,7 @@ class Offers extends Admin_Controller {
         $this->load->helper(array('form', 'url'));
         $this->load->library('session');
         $this->load->library(array('ion_auth', 'form_validation', 'session'));
+        //$this->load->library('form_validation');
     }
 
 //display list of offers
@@ -62,30 +63,35 @@ class Offers extends Admin_Controller {
             $user = $this->ion_auth->user()->row();
             $user_id = $user->id;
         }
-        if ($this->input->post('province_id')) {
-            $data['province_id'] = $this->input->post('province_id');
-            $data['city_id'] = $this->input->post('city_id');
-            $data['name'] = $this->input->post('name');
-            $data['phone'] = $this->input->post('phone');
-            $data['description'] = $this->input->post('description');
-            $data['address'] = $this->input->post('address');
-            $my_date = date("Y-m-d H:i:s");
-            $data['date_created'] = $my_date;
-            $data['date_updated'] = $my_date;
-            $data['user_id'] = $user_id;
-            $data['is_active'] = $this->input->post('is_active');
-
-            //$this->ion_auth->remove_from_group('', $id);
-            //$this->ion_auth->add_to_group($group_id, $id);
-            //$this->ion_auth->update($id, $data);
-            $imgName = $this->do_upload();
-            if ($imgName) {
-                $data['image'] = $imgName;
-            }
-            $isInsert = $this->offers_model->insert_offer($data);
-            if ($isInsert) {
-                $this->session->set_flashdata('message', 'Added Successfully!');
-                redirect('/admin/offers', 'refresh');
+        $this->form_validation->set_rules('name', 'name', 'required');
+        $this->form_validation->set_rules('phone', 'phone', 'required');
+        $this->form_validation->set_rules('description', 'description', 'required');
+        $this->form_validation->set_rules('address', 'address', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('/admin/offers/create', 'refresh');
+        } else {
+            if ($this->input->post('province_id')) {
+                $data['province_id'] = $this->input->post('province_id');
+                $data['city_id'] = $this->input->post('city_id');
+                $data['name'] = $this->input->post('name');
+                $data['phone'] = $this->input->post('phone');
+                $data['description'] = $this->input->post('description');
+                $data['address'] = $this->input->post('address');
+                $my_date = date("Y-m-d H:i:s");
+                $data['date_created'] = $my_date;
+                $data['date_updated'] = $my_date;
+                $data['user_id'] = $user_id;
+                $data['is_active'] = $this->input->post('is_active');
+                $imgName = $this->do_upload();
+                if ($imgName) {
+                    $data['image'] = $imgName;
+                }
+                $isInsert = $this->offers_model->insert_offer($data);
+                if ($isInsert) {
+                    $this->session->set_flashdata('message', 'Added Successfully!');
+                    redirect('/admin/offers', 'refresh');
+                }
             }
         }
     }
@@ -137,6 +143,14 @@ class Offers extends Admin_Controller {
             $user = $this->ion_auth->user()->row();
             $user_id = $user->id;
         }
+          $this->form_validation->set_rules('name', 'name', 'required');
+        $this->form_validation->set_rules('phone', 'phone', 'required');
+        $this->form_validation->set_rules('description', 'description', 'required');
+        $this->form_validation->set_rules('address', 'address', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect('/admin/offers/edit/'.$id, 'refresh');
+        }else{
         if ($this->input->post('name')) {
             $data['id'] = $id;
             if ($this->input->post('province_id')) {
@@ -167,6 +181,7 @@ class Offers extends Admin_Controller {
                     redirect('/admin/offers', 'refresh');
                 }
             }
+        }
         }
     }
 
