@@ -9,8 +9,13 @@ class Offers extends CI_Controller {
         $this->load->model('offer_search_model');
         //$this->load->model('provinces_model');
         // $this->load->helper('url');
+        
         $this->load->helper(array('form', 'url'));
         $this->load->library('session');
+          $this->load->library(array('ion_auth', 'form_validation', 'session'));
+            if (!$this->ion_auth->logged_in()) {
+               redirect(base_url().'index.php/auth/index', 'refresh');
+          }
     }
 
     public function index() {

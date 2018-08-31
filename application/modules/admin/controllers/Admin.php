@@ -9,7 +9,11 @@ class Admin extends Admin_Controller{
 
      function __construct() {
         parent::__construct();
-          $this->load->library(array('ion_auth'));
+         // $this->load->library(array('ion_auth'));
+            $this->load->library(array('ion_auth', 'form_validation', 'session'));
+            if (!$this->ion_auth->logged_in()) {
+               redirect(base_url().'index.php/auth/index', 'refresh');
+          }
 
     if (!$this->ion_auth->logged_in()) {
         redirect('/auth/index', 'refresh');
