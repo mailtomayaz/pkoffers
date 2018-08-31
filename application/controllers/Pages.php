@@ -21,10 +21,10 @@ class Pages extends CI_Controller {
         $this->load->model('admin/provinces_model');
         $this->load->model('admin/city_model');
          $this->load->model('admin/category_model');
-           $this->load->library(array('ion_auth', 'form_validation', 'session'));
-            if (!$this->ion_auth->logged_in()) {
-               redirect(base_url().'index.php/auth/index', 'refresh');
-          }
+//           $this->load->library(array('ion_auth', 'form_validation', 'session'));
+//            if (!$this->ion_auth->logged_in()) {
+//               redirect(base_url().'index.php/auth/index', 'refresh');
+//          }
     }
 
     public function view($page = 'home') {
