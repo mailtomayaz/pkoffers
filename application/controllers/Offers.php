@@ -21,7 +21,7 @@ class Offers extends CI_Controller {
     public function index() {
         $this->load->view('offers');
     }
-
+//get all cities of a province
     public function getCitiesByProvince() {
         // echo "You done it";         
         $id = $this->input->post('id');
@@ -34,5 +34,33 @@ class Offers extends CI_Controller {
         }
        echo $html;
     }
+   //get all offers 
+    public function getOffers() {
+        // echo "You done it";      
+       $arrData='';
+       $arrData['category_id']= $this->input->post('category_id');
+       $arrData['city_id'] = $this->input->post('city_id');
+       $arrData['province_id'] = $this->input->post('province_id');
+       
+        $data = $this->offer_search_model->getOffers($arrData);
+        $html='';
+        if($data){
+            foreach($data as $option){
+               $html.= '<div class="col-lg-4">';
+               $html.= '<div class="offer_province_name">'.$option->province_id.'</div>';
+                $html.= '<div class="offer_category_name">'.$option->category_id.'</div>';
+                 $html.= '<div class="offer_desc">'.$option->description.'</div>';
+                  $html.= '<div class="offer_address">'.$option->address.'</div>';
+                   $html.= '<div class="offer_phone">'.$option->phone.'</div>';
+                   $html.= '<div class="offer_img">'.$option->phone.'</div>';
+                   $html.= '<div class="offer_date_created">'.$option->date_created.'</div>';
+                   //$html.= '<div class="offer_date_expire">'.$option->date_created.'</div>';
+
+                 $html.= '</div>';
+            }
+        }
+       echo $html;
+    } 
+    
 
 }

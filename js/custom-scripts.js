@@ -45,4 +45,29 @@ $(document).ready(function () {
         });
        
     });
+     //search result
+     $('.searchdeal').click(function(){
+       base_url     = $('#base_url').val();
+       province_id  = $('#provice').val();    
+       city_id      = $('#cities').val();
+       category_id  = $('#category').val();
+
+        var request = $.ajax({
+            url: base_url+"index.php/offers/getOffers",
+            type: "POST",
+            data: {province_id: province_id,city_id:city_id,category_id:category_id},
+            dataType: "html"
+        });
+
+        request.done(function (msg) {
+            $(".offer-contaner").html(msg);
+            console.log(msg);
+        });
+
+        request.fail(function (jqXHR, textStatus) {
+            alert("Request failed: " + textStatus);
+        });
+       
+     });
+     
 });

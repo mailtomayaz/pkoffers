@@ -29,7 +29,7 @@
             <td>
             <div class="form-group">
     <label for="email">Category:</label>
-    <select class="form-control">
+    <select class="form-control" id="category">
        <?php foreach($category_list as $data){ ?>
         <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
         <?php } ?>
@@ -77,5 +77,10 @@
   </form>
         </div>
       </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="offer-contaner"></div>
+            </div>
+        </div>
     </div>
   </section>
