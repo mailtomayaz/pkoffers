@@ -1,11 +1,9 @@
 <?php
-
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 ?>
  <section id="works" class="section gray">
     <div class="container">
@@ -24,53 +22,51 @@
       <div class="row">
         <div class="col-md-12">
           <form action="/action_page.php"> 
-
+              <input type="hidden" value="<?php echo base_url(); ?>" name="base_url" id="base_url">
             <table class="table">
-    <thead>
-<!--      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>-->
-    </thead>
     <tbody>
       <tr>
             <td>
             <div class="form-group">
-    <label for="email">Province:</label>
+    <label for="email">Category:</label>
     <select class="form-control">
-        <option>KPK</option>
-        <option>Punjab</option>
-        <option>Sindh</option>
-         <option>Blochistan</option>
+       <?php foreach($category_list as $data){ ?>
+        <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
+        <?php } ?>
+    </select>
+
+  </div></td>
+            <td>
+            <div class="form-group">
+    <label for="email">Province:</label>
+    <select class="form-control" id="provice">
+        <?php foreach($provinces_list as $prov){ ?>
+        <option value="<?php echo $prov->id ?>"><?php echo $prov->name ?></option>
+        <?php } ?>
+      
     </select>
 
   </div></td>
         <td>
             <div class="form-group">
     <label for="email">City:</label>
-    <select class="form-control">
-        <option>Haripur</option>
-        <option>Abotabad</option>
-        <option>Multan</option>
+    <select class="form-control" id="cities">
+         <?php foreach($cities_list as $data){ ?>
+        <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
+        <?php } ?>
     </select>
 
   </div></td>
-     <td>
-            <div class="form-group">
-    <label for="email">Category:</label>
-    <select class="form-control">
-        <option>Cloths</option>
-        <option>Shoes</option>
-        <option>Grossory</option>
-    </select>
-
-  </div></td>
+   
       
         
   <td> 
-      <label for=""></label>
-      <button type="submit" class="btn btn-default">Submit</button>
+         <div class="form-group">
+      <label for="">&nbsp;</label>
+      <div class="">
+      <button type="button" class="btn btn-default searchdeal" >Go</button>
+         </div>
+         </div>
   </td>
       </tr>
       

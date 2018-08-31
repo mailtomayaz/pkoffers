@@ -15,8 +15,12 @@ class Pages extends CI_Controller {
      * */
     function __construct() {
         parent::__construct();
-    // Load url helper
+        // Load url helper
         $this->load->helper('url');
+        $this->load->model('admin/offers_model');
+        $this->load->model('admin/provinces_model');
+        $this->load->model('admin/city_model');
+         $this->load->model('admin/category_model');
     }
 
     public function view($page = 'home') {
@@ -26,7 +30,9 @@ class Pages extends CI_Controller {
         }
 
         $data['title'] = ucfirst($page); // Capitalize the first letter
-
+        $data['provinces_list'] = $this->provinces_model->getList();
+        $data['cities_list'] = $this->city_model->getList();
+         $data['category_list'] = $this->category_model->getList();
         $this->load->view('templates/header', $data);
         $this->load->view('pages/' . $page, $data);
         $this->load->view('templates/sidebar', $data);

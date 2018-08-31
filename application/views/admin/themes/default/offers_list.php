@@ -41,6 +41,7 @@
                                     <th>Image</th>
                                     <th>Province</th>
                                     <th>City</th>
+                                    <th>Category</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -68,6 +69,13 @@
                                      }
                                     //echo $offer->city_id
                                             ?></td>
+                                     <td><?php
+                                     foreach($category_list as $cat){
+                                     if($offer->category_id ==  $cat->id){
+                                         echo $cat->name;
+                                     }
+                                     }
+                                             ?></td>
                                      <td>
                                         <a href="<?php echo base_url('admin/offers/edit/'.$offer->id )?>" class="btn btn-info">edit</a>  
                                         <a href="<?php echo base_url('admin/offers/delete/'.$offer->id )?>" class="btn btn-danger">delete</a>

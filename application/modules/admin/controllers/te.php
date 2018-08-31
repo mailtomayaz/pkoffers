@@ -1,18 +1,19 @@
 <?php
+
 /*
  * this controller is to handle the offers
  * add, edit,delete,update
  * created by Muhammad Ayaz
- * August 31,2018
+ * June 21,2018
  * url: khaysoft.com
- * email: mailtomayaz@gmail.com
  * all rights reserverd by khaysoft 
  *  */
-class Categories extends Admin_Controller {
+
+class Cities extends Admin_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->model('category_model');
+        $this->load->model('city_model');
         $this->load->model('provinces_model');
         // $this->load->helper('url');
         $this->load->helper(array('form', 'url'));
@@ -22,40 +23,40 @@ class Categories extends Admin_Controller {
 //display list
     public function index() {
 
-        $data['result'] = $this->category_model->getList();
+        $data['result'] = $this->city_model->getList();
         $data['province'] = $this->provinces_model->getList();
-        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "category_list";
+        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "cities_list";
         $this->load->view($this->_container, $data);
     }
 
 //add form view
     public function add() {
         $data['province'] = $this->provinces_model->getList();
-        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "category_add";
+        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "city_add";
         $this->load->view($this->_container, $data);
     }
 
 //edit view 
     public function edit($id) {
         //$data['province']=$this->provinces_model->getById($id);
-        $data['category'] = $this->category_model->getById($id);
-        //$data['province_list'] = $this->provinces_model->getList();
-        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "category_edit";
+        $data['city'] = $this->city_model->getById($id);
+        $data['province_list'] = $this->provinces_model->getList();
+        $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "city_edit";
         $this->load->view($this->_container, $data);
     }
 
     //insert data to database
-    public function category_add() {
+    public function city_add() {
 
         if ($this->input->post('name')) {
             // $data['name'] = $this->input->post('name');
-            //$data['province_id'] = $this->input->post('province');
+            $data['province_id'] = $this->input->post('province');
             $name_list = $this->input->post('name');
             $arr_name = explode(',', $name_list);
             if (!empty($arr_name)) {
                 foreach ($arr_name as $city) {
                     $data['name'] = $city;
-                    $isInsert = $this->category_model->insert($data);
+                    $isInsert = $this->city_model->insert($data);
                 }
             } else {
                 // echo "Only one";
@@ -63,7 +64,7 @@ class Categories extends Admin_Controller {
 
             if ($isInsert) {
                 $this->session->set_flashdata('message', 'Record Added Successfully!');
-                redirect('/admin/categories', 'refresh');
+                redirect('/admin/cities', 'refresh');
             }
         }
     }
@@ -72,13 +73,13 @@ class Categories extends Admin_Controller {
     public function update($id) {
         if ($this->input->post('name')) {
             $data['id'] = $id;
-           // $data['province_id'] = $this->input->post('province_id');
+            $data['province_id'] = $this->input->post('province_id');
             $data['name'] = $this->input->post('name');
-            $isInsert = $this->category_model->update($data);
+            $isInsert = $this->city_model->update($data);
 
             if ($isInsert) {
                 $this->session->set_flashdata('message', 'Record Updated Successfully!');
-                redirect('/admin/categories', 'refresh');
+                redirect('/admin/cities', 'refresh');
             }
         }
     }
@@ -89,10 +90,10 @@ class Categories extends Admin_Controller {
 
         $data['id'] = $id;
         $data['is_deleted'] = 1;
-        $isInsert = $this->category_model->update($data);
+        $isInsert = $this->provinces_model->update($data);
         if ($isInsert) {
             $this->session->set_flashdata('message', 'Deleted Successfully!');
-            redirect('/admin/categories', 'refresh');
+            redirect('/admin/provinces', 'refresh');
         }
     }
 

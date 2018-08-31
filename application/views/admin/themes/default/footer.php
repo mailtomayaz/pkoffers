@@ -16,6 +16,7 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="<?php echo base_url() ?>assets/admin/js/sb-admin-2.js"></script>
+<script src="<?php echo base_url() ?>assets/admin/js/admin-script.js"></script>
 <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({

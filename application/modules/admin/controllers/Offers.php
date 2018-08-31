@@ -1,5 +1,4 @@
 <?php
-
 /*
  * this controller is to handle the offers
  * add, edit,delete,update
@@ -16,6 +15,7 @@ class Offers extends Admin_Controller {
         $this->load->model('offers_model');
         $this->load->model('provinces_model');
         $this->load->model('city_model');
+         $this->load->model('category_model');
         // $this->load->helper('url');
         $this->load->helper(array('form', 'url'));
         $this->load->library('session');
@@ -33,6 +33,7 @@ class Offers extends Admin_Controller {
         }
         $data['provinces_list'] = $this->provinces_model->getList();
         $data['cities_list'] = $this->city_model->getList();
+          $data['category_list'] = $this->category_model->getList();
         $data['result'] = $this->offers_model->getListOffers($user_id);
         $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "offers_list";
         $this->load->view($this->_container, $data);
@@ -43,6 +44,7 @@ class Offers extends Admin_Controller {
         //get cities
         $data['provinces_list'] = $this->provinces_model->getList();
         $data['cities_list'] = $this->city_model->getList();
+          $data['category_list'] = $this->category_model->getList();
         $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "offers_create";
         $this->load->view($this->_container, $data);
     }
@@ -51,6 +53,7 @@ class Offers extends Admin_Controller {
     public function edit($id) {
         $data['provinces_list'] = $this->provinces_model->getList();
         $data['cities_list'] = $this->city_model->getList();
+           $data['category_list'] = $this->category_model->getList();
         $data['result'] = $this->offers_model->getOfferById($id);
         $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "offers_edit";
         $this->load->view($this->_container, $data);
@@ -78,6 +81,7 @@ class Offers extends Admin_Controller {
                 $data['phone'] = $this->input->post('phone');
                 $data['description'] = $this->input->post('description');
                 $data['address'] = $this->input->post('address');
+                $data['category_id'] = $this->input->post('category_id');
                 $my_date = date("Y-m-d H:i:s");
                 $data['date_created'] = $my_date;
                 $data['date_updated'] = $my_date;
@@ -160,6 +164,7 @@ class Offers extends Admin_Controller {
                 $data['phone'] = $this->input->post('phone');
                 $data['description'] = $this->input->post('description');
                 $data['address'] = $this->input->post('address');
+                $data['category_id'] = $this->input->post('category_id');
                 $my_date = date("Y-m-d H:i:s");
                 //$data['date_created'] = $my_date;
                 $data['date_updated'] = $my_date;

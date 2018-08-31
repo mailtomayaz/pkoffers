@@ -1,5 +1,4 @@
 <?php
-
 if (isset($page)) {
     if (isset($module)) {
         $this->load->view("$module/$page");

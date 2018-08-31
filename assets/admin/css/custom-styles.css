@@ -14,3 +14,10 @@ and open the template in the editor.
     font-size: 20px;
     padding: 25px 0 0 0;
 }
+
+#infoMessageError {
+    text-align: left;
+    color: red;
+    font-size: 20px;
+    padding: 25px 0 0 0;
+}

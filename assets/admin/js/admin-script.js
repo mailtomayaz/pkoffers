@@ -4,25 +4,7 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
-    //home page slider
-    $('#slippry-slider').slippry(
-            defaults = {
-                transition: 'fade',
-                useCSS: true,
-                speed: 5000,
-                pause: 3000,
-                initSingle: false,
-                auto: true,
-                preload: 'visible',
-                pager: false,
-            }
 
-    );
-//      new AnimOnScroll(document.getElementById('grid'), {
-//      minDuration: 0.4,
-//      maxDuration: 0.7,
-//      viewportFactor: 0.2
-//    });
     //change city drop down
     $("#provice").change(function () {
         base_url = $('#base_url').val();

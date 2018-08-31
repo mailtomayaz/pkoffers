@@ -36,6 +36,17 @@
                         <div class="col-lg-6">
                             <?php echo validation_errors(); ?>
                             <form role="form" action="<?php echo base_url('admin/offers/offer_add') ?>" method="post" enctype="multipart/form-data">
+                                   <div class="form-group">
+                                    <label>Category</label>
+
+                                    <select name='category_id' class="form-control">
+                                        <?php foreach ($category_list as $cat) {
+                                            ?>
+                                            <option value="<?php echo $cat->id ?>"> <?php echo $cat->name; ?></option>
+                                            <?php }
+                                        ?>
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label>Province</label>
 
