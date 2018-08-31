@@ -36,7 +36,8 @@
                         <div class="col-lg-6">
                             <?php echo validation_errors(); ?>
                             <form role="form" action="<?php echo base_url('admin/offers/offer_add') ?>" method="post" enctype="multipart/form-data">
-                                   <div class="form-group">
+                                <input type="hidden" value="<?php echo base_url(); ?>" id="base_url">   
+                                <div class="form-group">
                                     <label>Category</label>
 
                                     <select name='category_id' class="form-control">
@@ -50,7 +51,7 @@
                                 <div class="form-group">
                                     <label>Province</label>
 
-                                    <select name='province_id' class="form-control">
+                                    <select name='province_id' class="form-control" id='province_id'>
                                         <?php foreach ($provinces_list as $pro) {
                                             ?>
                                             <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>
@@ -61,7 +62,7 @@
                                 <div class="form-group">
                                     <label>City</label>
 
-                                    <select name='city_id' class="form-control">
+                                    <select name='city_id' class="form-control" id='city_id'>
                                         <?php foreach ($cities_list as $pro) {
                                             ?>
                                             <option value="<?php echo $pro->id ?>"> <?php echo $pro->name; ?></option>

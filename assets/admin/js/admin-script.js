@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
-
     //change city drop down
-    $("#provice").change(function () {
+    $("#province_id").change(function () {
         base_url = $('#base_url').val();
         province_id = $(this).val();       
-        var menuId = $("ul.nav").first().attr("id");
-        var request = $.ajax({
+           var request = $.ajax({
             url: base_url+"index.php/offers/getCitiesByProvince",
             type: "POST",
             data: {id: province_id},
@@ -18,7 +16,7 @@ $(document).ready(function () {
         });
 
         request.done(function (msg) {
-            $("#cities").html(msg);
+            $("#city_id").html(msg);
             console.log(msg);
         });
 
