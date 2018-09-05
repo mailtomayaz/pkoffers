@@ -25,6 +25,7 @@ class Offers extends CI_Controller {
     public function getCitiesByProvince() {
         // echo "You done it";         
         $id = $this->input->post('id');
+        echo $id;
         $data = $this->offer_search_model->getCitiesByProviceId($id);
         $html='';
         if($data){
