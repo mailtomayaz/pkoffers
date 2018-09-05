@@ -109,5 +109,32 @@ $data['groups'] = $groups;
         
         die('test');
     }
+    
+    public function change_password_form($id){
+        $data['user_id']= $id;
+         $data['page'] = $this->config->item('ci_my_admin_template_dir_admin') . "change_password_form";
+        $this->load->view($this->_container, $data);
+          
+    }
+    public function change_password(){
+        //print_r($this->input->post());
+        $user_info = $this->ion_auth->user($this->input->post('user_id'))->row();
+        if ($this->input->post('user_id')) {
+            $old_pass = $this->input->post('old_password');
+            $new_pass = $this->input->post('new_password');
+          $res =  $this->ion_auth->change_password($user_info->email,$old_pass,$new_pass);
+          //print_r($this->ion_auth->errors());
+          if($res){
+              $this->session->set_flashdata('message', 'Password Changed Successfully!');
+                    redirect('/admin/users', 'refresh');
+         }else{
+                $this->session->set_flashdata('message',$this->ion_auth->errors());
+                    redirect('/admin/users', 'refresh');
+         }
+          echo $res;
+          print_r($res);
+         }
+          
+    }
 
 }

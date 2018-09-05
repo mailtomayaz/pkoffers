@@ -7,6 +7,14 @@
  */
 ?>
 <div id="page-wrapper">
+     <div class="row">
+        <div class="col-lg-12">
+
+            <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
     <div class="row">
         <div class="col-lg-12">
       <div class="page-header users-header">
@@ -49,7 +57,8 @@
                                     <td>4</td>-->
                                     <td>
                                         <a href="<?php echo  base_url('admin/users/edit_user/'.$user->user_id)?>" class="btn btn-info">edit</a>  
-                                        <a href="<?php echo base_url('admin/brands/delete/'.$user->user_id)?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php echo base_url('admin/users/delete/'.$user->user_id)?>" class="btn btn-danger">delete</a>
+                                        <a href="<?php echo base_url('admin/users/change_password_form/'.$user->user_id)?>" class="btn btn-danger">Change Password</a>
                                     </td>
                                 </tr>
                                 <?php } ?>
