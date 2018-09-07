@@ -12,14 +12,14 @@ class Offers extends CI_Controller {
         
         $this->load->helper(array('form', 'url'));
         $this->load->library('session');
-          $this->load->library(array('ion_auth', 'form_validation', 'session'));
-            if (!$this->ion_auth->logged_in()) {
-               redirect(base_url().'index.php/auth/index', 'refresh');
-          }
+//          $this->load->library(array('ion_auth', 'form_validation', 'session'));
+//            if (!$this->ion_auth->logged_in()) {
+//               redirect(base_url().'index.php/auth/index', 'refresh');
+//          }
     }
 
     public function index() {
-        $this->load->view('offers');
+       // $this->load->view('offers');
     }
 //get all cities of a province
     public function getCitiesByProvince() {
@@ -59,6 +59,11 @@ class Offers extends CI_Controller {
 
                  $html.= '</div>';
             }
+        }else{
+             $html.= '<div class="col-lg-4">';
+              $html.= 'No offer found';
+              $html.= '</div>';
+             
         }
        echo $html;
     } 

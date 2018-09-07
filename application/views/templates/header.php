@@ -37,6 +37,7 @@
                                     <li class="current"><a href="<?php echo base_url(); ?>">Home</a></li>
                                     <li><a href="<?php echo base_url(); ?>index.php/about-us">About</a></li>
                                     <li><a href="<?php echo base_url(); ?>index.php/contact-us">Contact</a></li>
+                                    <li><a href="<?php echo base_url(); ?>index.php/login">Login/Register</a></li>
                                 </ul>
                             </nav>
                         </div>
