@@ -23,8 +23,19 @@ class Users extends CI_Controller {
     }
 //get all cities of a province
     public function add(){
-          if ($this->input->post('username')) {
-            $username = $this->input->post('username');
+        $this->form_validation->set_rules('username', 'username', 'required');
+        $this->form_validation->set_rules('password', 'password', 'required');
+        $this->form_validation->set_rules('email', 'email', 'email|required');
+        $this->form_validation->set_rules('first_name', 'first name', 'required');
+        $this->form_validation->set_rules('phone', 'phone', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $this->session->set_flashdata('error', $this->form_validation->error_array());
+            //print_r($this->form_validation->error_array());
+          //  die('tes');
+           // redirect('/admin/offers/create', 'refresh');
+             redirect('/login', 'refresh');
+        }else{
+             $username = $this->input->post('username');
             $password = $this->input->post('password');
             $email = $this->input->post('email');
             //$group_id = 2;//register as a member group
@@ -43,9 +54,11 @@ class Users extends CI_Controller {
                 echo $errors;
                 die('done');
             } else {
+                
                 redirect('index.php/login', 'refresh');
             }
         }
+         
     }
     
 

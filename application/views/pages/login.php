@@ -7,17 +7,39 @@
 ?>
  <section id="works" class="section gray">
     <div class="container">
-     
+      <div class="row">
+        <div class="col-lg-12">
+
+            <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+           <div class="row">
+        <div class="col-lg-12">
+<?php $error = $this->session->flashdata('error');
+echo "<pre>";
+print_r($error);
+?>
+            <div id="infoMessage"></div>
+
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
       <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <form role="form" action="<?php echo base_url('users/add/') ?>" method="post">
 
                                 <div class="form-group">
-                                    <label>First Name</label>
+                                    <label>First Name*</label>
+                                   
                                     <input name="first_name" class="form-control" value="" placeholder="First Name">
+                                     <?php if($error['first_name']){
+                                        echo "<div class='col-lg-12 errormsg'>".$error['first_name']."</div>";
+                                    }?>
                                 </div>
                                  <div class="form-group">
-                                    <label>Last Name</label>
+                                    <label>Last Name*</label>
                                     <input name="last_name" class="form-control" value="" placeholder="Last Name">
                                 </div>
                                  <div class="form-group">
