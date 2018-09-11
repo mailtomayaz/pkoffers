@@ -29,7 +29,7 @@ class Auth extends MY_Controller {
     }
 
     function login() {
-        $this->form_validation->set_rules('email', 'Email', 'required');
+             $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
 
         if ($this->form_validation->run() == true) {
@@ -40,7 +40,7 @@ class Auth extends MY_Controller {
                 redirect('/admin/dashboard', 'refresh');
             } else {
                 $this->session->set_flashdata('message', $this->ion_auth->errors());
-                redirect('auth', 'refresh');
+                redirect('login', 'refresh');
             }
         } else {
             $this->session->set_flashdata('message', $this->ion_auth->errors());
