@@ -1,14 +1,13 @@
 
 <div class="container fill">
     <div class="wrapper">
-<!--        <div class="row">
+ <div class="row">
         <div class="col-lg-12">
 
             <div id="infoMessage"><?php echo $this->session->flashdata('message'); ?></div>
 
         </div>
-         /.col-lg-12 
-    </div>-->
+    </div>
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="login-panel panel panel-default">
@@ -17,10 +16,10 @@
                 </div>
                 <div class="panel-body">
                     <?php if ($this->session->flashdata('message')): ?>
-                        <div class="alert alert-danger fade in">
+                       <!--  <div class="alert alert-danger fade in">
                             <a href="#" class="close" data-dismiss="alert">&times;</a>
-                            <?php echo $this->session->flashdata('message') ?>
-                        </div>
+                            <?php //echo $this->session->flashdata('message') ?>
+                        </div> -->
                     <?php endif; ?>
                     <form role="form" method="POST" action="<?php echo base_url('auth/login') ?>">
                         <fieldset>

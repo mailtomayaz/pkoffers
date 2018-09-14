@@ -21,9 +21,21 @@ class Offer_search_model extends CI_Model
           return $query->result();
     }
     
-      public function getOffers($arrData){
-        
+      public function getOffers($limit,$start,$arrData){
+        $this->db->limit($limit,$start);
           $query = $this->db->get_where('offers', array('province_id'=>$arrData['province_id'],'category_id'=>$arrData['category_id'],'city_id'=>$arrData['city_id']));
+         // $this->db->last_query(); 
+          return $query->result();
+    }
+   public function getAllOffers($arrData){
+        //$this->db->limit($limit);
+          $query = $this->db->get_where('offers', array('province_id'=>$arrData['province_id'],'category_id'=>$arrData['category_id'],'city_id'=>$arrData['city_id']));
+         // $this->db->last_query(); 
+          return $query->result();
+    }
+       public function getOfferById($id){
+        
+          $query = $this->db->get_where('offers', array('id'=>$id));
           return $query->result();
     }
 	

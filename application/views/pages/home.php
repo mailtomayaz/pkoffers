@@ -10,7 +10,7 @@
       <div class="wrapersiteoption">
       <div class="siteoptions">
           <ul>
-              <li> <a href="<?php echo base_url(); ?>index.php/deals"> Deals</a></li>
+              <li> <a href="<?php echo base_url(); ?>/deals"> Deals</a></li>
               <li> <a href="<?php echo base_url(); ?>/investments"> Investments</a></li>
               <li> <a href="<?php echo base_url(); ?>/charity"> Charity</a></li>
           </ul>

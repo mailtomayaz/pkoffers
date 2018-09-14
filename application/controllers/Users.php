@@ -23,21 +23,34 @@ class Users extends CI_Controller {
     }
 //get all cities of a province
     public function add(){
-          $this->form_validation->set_rules('first_name', 'first name', 'required');
-            $this->form_validation->set_rules('last_name', 'first name', 'required');
-        $this->form_validation->set_rules('username', 'username', 'required');
-        $this->form_validation->set_rules('password', 'password', 'required');
+       // print_r($_POST);
+/*        $this->form_validation->set_rules('first_name', 'first name', 'required');
+        $this->form_validation->set_rules('last_name', 'Last name', 'required');
+         $this->form_validation->set_rules('username', 'user name', 'required');
+       //$this->form_validation->set_rules('username', 'user name', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
         $this->form_validation->set_rules('email', 'email', 'email|required');
-        $this->form_validation->set_rules('phone', 'phone', 'required');
+        $this->form_validation->set_rules('phone', 'phone', 'required');*/
+
+         $this->form_validation->set_rules('first_name', 'First Name', 'required');
+        $this->form_validation->set_rules('last_name', 'Last Name', 'required');
+        $this->form_validation->set_rules('username', 'User Name', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('phone', 'Phone', 'required');
       
-        
+    
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', $this->form_validation->error_array());
-            //print_r($this->form_validation->error_array());
+                /*print_r($_POST);
+                die('tet');*/
+           //  $this->session->set_flashdata('message', validation_errors());
+           //print_r($this->form_validation->error_array());
           //  die('tes');
            // redirect('/admin/offers/create', 'refresh');
              redirect('/registor', 'refresh');
         }else{
+            
              $username = $this->input->post('username');
             $password = $this->input->post('password');
             $email = $this->input->post('email');
@@ -57,8 +70,8 @@ class Users extends CI_Controller {
                 echo $errors;
                 die('done');
             } else {
-                
-                redirect('/registor', 'refresh');
+                  $this->session->set_flashdata('message', 'Registor successfully! Please Login');
+                redirect('/login', 'refresh');
             }
         }
          

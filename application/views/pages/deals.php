@@ -22,6 +22,7 @@
       <div class="row">
         <div class="col-md-12">
           <form action="/action_page.php"> 
+            <input class="page_no" type="hidden" name="page_no" value="1">
               <input type="hidden" value="<?php echo base_url(); ?>" name="base_url" id="base_url">
             <table class="table">
     <tbody>
@@ -80,6 +81,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="offer-contaner"></div>
+                <div class="pagination_link"></div>
             </div>
         </div>
     </div>

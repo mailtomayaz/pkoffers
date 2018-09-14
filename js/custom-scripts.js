@@ -45,23 +45,61 @@ $(document).ready(function () {
         });
        
     });
-     //search result
+    //search result
+     function sendData(page){
+
+     }
      $('.searchdeal').click(function(){
        base_url     = $('#base_url').val();
        province_id  = $('#provice').val();    
        city_id      = $('#cities').val();
        category_id  = $('#category').val();
+        page_no  = $('.page_no').val();
 
         var request = $.ajax({
-            url: base_url+"index.php/offers/getOffers",
+            url: base_url+"offers/getOffers",
             type: "POST",
-            data: {province_id: province_id,city_id:city_id,category_id:category_id},
-            dataType: "html"
+            data: {province_id: province_id,city_id:city_id,category_id:category_id,page_no:page_no},
+            dataType: "json"
         });
 
-        request.done(function (msg) {
-            $(".offer-contaner").html(msg);
-            console.log(msg);
+        request.done(function (data) {
+            output= '';
+            console.log(data.offers);
+$.each(data.offers, function( key, value ) {
+  
+  //alert( key + ": " + value );
+
+});
+ output='';
+ if(data.offers){
+     output+= '<div class="row">';
+   $.each(data.offers, function (key, data) {
+
+ output+= '<div class="col-lg-4 box-series">';
+
+output+='<div class="product-image"><img class="img-responsive" src="'+base_url+'uploads/'+data['image']+'" /></div>';
+               output+=' <h2>'+data['name']+'</h2>';
+               output+= '<div class="offer_province_name">'+data['province_id']+'</div>';
+               output+= '<div class="offer_category_name">'+data['city_id']+'</div>';
+               output+= '<div class="offer_desc">'+data['description']+'</div>';
+                 // $html.= '<div class="offer_address">'.$option->address.'</div>';
+                 //  $html.= '<div class="offer_phone">'.$option->phone.'</div>';
+                 //$html.= '<div class="offer_img">'.$option->phone.'</div>';
+                 // $html.= '<div class="offer_date_created">'.$option->date_created.'</div>';
+                 //$html.= '<div class="offer_date_expire">'.$option->date_created.'</div>';
+                output+= '<a href="'+base_url+'offers/showoffer/'+data['id']+'" class="offer_link">View Details</a>';
+                output+= '</div>';
+   
+    //console.log(data['name']);
+   
+});
+    output+= '</div">';
+            }
+
+            $(".offer-contaner").html(output);
+            $('.pagination_link').html(data.pagination_link);
+            console.log(data);
         });
 
         request.fail(function (jqXHR, textStatus) {
@@ -69,5 +107,30 @@ $(document).ready(function () {
         });
        
      });
+
+     $(document).on("click", ".pagination li a", function(event){
+  event.preventDefault();
+  //alert('test');
+  var page = $(this).data("ci-pagination-page");
+  if(typeof page == 'undefined'){
+    page = 1;
+  }
+
+  $('.page_no').val(page);
+$('.pagination li').removeClass('active');
+  $('.searchdeal').trigger('click');
+  //page.parent().addClass('active');
+
+  var delayInMilliseconds = 1000; //1 second
+
+setTimeout(function() {
+  //your code to be executed after 1 second
+  $('.pagination li').removeClass('active');
+   $(this).addClass('active');
+}, delayInMilliseconds);
+ 
+
+ });
+
      
 });
