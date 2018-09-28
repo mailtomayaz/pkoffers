@@ -7,9 +7,10 @@
  */
 
 ?>
- <!-- Section about -->
+ <!-- Section about --> 
+    <div class="container fill">
   <section id="about" class="section">
-    <div class="container">
+ 
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="heading">
@@ -88,5 +89,6 @@
           </div>
         </div>
       </div>
-    </div>
+   
   </section>
+   </div>

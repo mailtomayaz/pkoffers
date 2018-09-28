@@ -4,6 +4,30 @@
  * and open the template in the editor.
  */
 $(document).ready(function () {
+
+    //datepicker
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
+     $('#datetimepicker1,#datetimepicker2').datetimepicker({
+       /* language:  'fr',*/
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
     //home page slider
     $('#slippry-slider').slippry(
             defaults = {
@@ -49,13 +73,26 @@ $(document).ready(function () {
      function sendData(page){
 
      }
+     /*datepicker*/
+
+
      $('.searchdeal').click(function(){
        base_url     = $('#base_url').val();
        province_id  = $('#provice').val();    
        city_id      = $('#cities').val();
        category_id  = $('#category').val();
-        page_no  = $('.page_no').val();
+       page_no  = $('.page_no').val();
+       dateFrom =formatDate($("#datetimepicker1").data("datetimepicker").getDate());
+       dateTo =formatDate($('#datetimepicker2').data("datetimepicker").getDate());
 
+
+//$('#datetimepicker1').datetimepicker({format: "YYYY-MM-DD"});
+
+
+//dateFrom2 = $('#datetimepicker1').datetimepicker().date();
+
+//dateForm4=$.format.date(dateFrom3, "dd-MM-yy");
+//alert(dateFrom3 );
         var request = $.ajax({
             url: base_url+"offers/getOffers",
             type: "POST",

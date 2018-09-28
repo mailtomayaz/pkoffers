@@ -11,6 +11,8 @@
         <link href="<?php echo base_url(); ?>css/bootstrap.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap-grid.min.css">   
         <link href="<?php echo base_url(); ?>css/bootstrap-theme.css" rel="stylesheet" />
+
+         <link href="<?php echo base_url(); ?>css/bootstrap-datetimepicker.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/custom-styles.css">
         <script src="<?php echo base_url(); ?>js/modernizr.custom.js"></script>
     </head>
@@ -35,9 +37,11 @@
                             <nav>
                                 <ul class="nav navbar-nav navbar-right">
                                     <li class="current"><a href="<?php echo base_url(); ?>">Home</a></li>
-                                    <li><a href="<?php echo base_url(); ?>index.php/about-us">About</a></li>
-                                    <li><a href="<?php echo base_url(); ?>index.php/contact-us">Contact</a></li>
-                                    <li><a href="<?php echo base_url(); ?>index.php/login">Login/Register</a></li>
+                                    <li><a href="<?php echo base_url(); ?>/about-us">About</a></li>
+                                    <li><a href="<?php echo base_url(); ?>/contact-us">Contact</a></li>
+                                   <!--  <li><a href="<?php echo base_url(); ?>/privacy-policy">Privacy Policy</a></li>
+                                    <li><a href="<?php echo base_url(); ?>/terms-conditions">Terms & Conditions</a></li> -->
+                                    <li><a href="<?php echo base_url(); ?>/login">Login/Register</a></li>
                                 </ul>
                             </nav>
                         </div>

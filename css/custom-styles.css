@@ -1832,3 +1832,13 @@ html,body{
   left: 50%;
   top: 50%;
 }
+
+footer ul li{
+display: inline-block;
+margin-right: 10px  }
+footer ul li a{
+color:#fff;
+}
+footer ul{
+
+}

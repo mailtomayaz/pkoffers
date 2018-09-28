@@ -5,8 +5,8 @@
  * and open the template in the editor.
  */
 ?>
- <section id="works" class="section gray">
-    <div class="container">
+    <div class="container fill">
+ <section id="works" class="section">
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <div class="heading">
@@ -60,7 +60,30 @@
   </div></td>
    
       
-        
+        <td>
+
+        <div class="form-group">
+          <label for="from">From</label>
+                <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+          </td>
+            <td>
+
+        <div class="form-group">
+          <label for="from">To</label>
+                <div class='input-group date' id='datetimepicker2' data-date-format="dd-mm-yyyy">
+                    <input data-format="yyyy-MM-dd" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+          </td>
   <td> 
          <div class="form-group">
       <label for="">&nbsp;</label>
@@ -84,5 +107,6 @@
                 <div class="pagination_link"></div>
             </div>
         </div>
-    </div>
+    
   </section>
+  </div>
