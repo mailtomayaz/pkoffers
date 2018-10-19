@@ -82,9 +82,12 @@ function formatDate(date) {
        city_id      = $('#cities').val();
        category_id  = $('#category').val();
        page_no  = $('.page_no').val();
-       dateFrom =formatDate($("#datetimepicker1").data("datetimepicker").getDate());
-       dateTo =formatDate($('#datetimepicker2').data("datetimepicker").getDate());
-
+              dateFrom  = $('#start_date').val();
+               dateTo  = $('#end_date').val();
+           //    console.log('from date'+ dateFromText +'lll end date' + dateToText);
+       //dateFrom =formatDate($("#datetimepicker1").data("datetimepicker").getDate());
+      // dateTo =formatDate($('#datetimepicker2').data("datetimepicker").getDate());
+page_no  = $('.page_no').val();
 
 //$('#datetimepicker1').datetimepicker({format: "YYYY-MM-DD"});
 
@@ -94,9 +97,9 @@ function formatDate(date) {
 //dateForm4=$.format.date(dateFrom3, "dd-MM-yy");
 //alert(dateFrom3 );
         var request = $.ajax({
-            url: base_url+"offers/getOffers",
+            url: base_url+"offers/getOffersByDate",
             type: "POST",
-            data: {province_id: province_id,city_id:city_id,category_id:category_id,page_no:page_no},
+            data: {province_id: province_id,city_id:city_id,category_id:category_id,page_no:page_no,dateFrom:dateFrom,dateTo:dateTo},
             dataType: "json"
         });
 

@@ -21,7 +21,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <form action="/action_page.php"> 
+          <form action="#" id="formseachdeal"> 
             <input class="page_no" type="hidden" name="page_no" value="1">
               <input type="hidden" value="<?php echo base_url(); ?>" name="base_url" id="base_url">
             <table class="table">
@@ -30,7 +30,7 @@
             <td>
             <div class="form-group">
     <label for="email">Category:</label>
-    <select class="form-control" id="category">
+    <select class="form-control" id="category" name="category">
        <?php foreach($category_list as $data){ ?>
         <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
         <?php } ?>
@@ -40,7 +40,7 @@
             <td>
             <div class="form-group">
     <label for="email">Province:</label>
-    <select class="form-control" id="provice">
+    <select class="form-control" id="provice" name="provice">
         <?php foreach($provinces_list as $prov){ ?>
         <option value="<?php echo $prov->id ?>"><?php echo $prov->name ?></option>
         <?php } ?>
@@ -51,7 +51,7 @@
         <td>
             <div class="form-group">
     <label for="email">City:</label>
-    <select class="form-control" id="cities">
+    <select class="form-control" id="cities" name="city">
          <?php foreach($cities_list as $data){ ?>
         <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
         <?php } ?>
@@ -65,7 +65,7 @@
         <div class="form-group">
           <label for="from">From</label>
                 <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
-                    <input type='text' class="form-control" />
+                    <input type='text' class="form-control" name="start_date"  id="start_date"  />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -77,7 +77,7 @@
         <div class="form-group">
           <label for="from">To</label>
                 <div class='input-group date' id='datetimepicker2' data-date-format="dd-mm-yyyy">
-                    <input data-format="yyyy-MM-dd" type='text' class="form-control" />
+                    <input data-format="yyyy-MM-dd" type='text' class="form-control"  name="end_date"  id="end_date" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
@@ -101,12 +101,14 @@
   </form>
         </div>
       </div>
+     <div class="search-result">
         <div class="row">
             <div class="col-lg-12">
                 <div class="offer-contaner"></div>
                 <div class="pagination_link"></div>
             </div>
         </div>
+     </div>
     
   </section>
   </div>

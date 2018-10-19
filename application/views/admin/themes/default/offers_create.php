@@ -70,6 +70,26 @@
                                         ?>
                                     </select>
                                 </div>
+                               
+        <div class="form-group">
+          <label for="from">Offer Start Date</label>
+                <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
+                    <input type='text' class="form-control"  name="offer_start_date" id="offer_start_date"  />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+              <div class="form-group">
+          <label for="from">Offer End Date</label>
+                <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
+                    <input type='text' class="form-control"  name="offer_end_date" id="offer_end_date"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+                                
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input name='name' class="form-control" placeholder="Enter Offer Name">

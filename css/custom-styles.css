@@ -1842,3 +1842,8 @@ color:#fff;
 footer ul{
 
 }
+.search-result {
+
+    float: left;
+    width: 100%;
+}

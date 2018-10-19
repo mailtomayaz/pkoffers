@@ -11,7 +11,7 @@
         <title>AllPkOffers Admin</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="<?php echo base_url() ?>assets/admin/css/bootstrap.min.css" rel="stylesheet">
+        <link href="<?php echo base_url() ?>assets/admin/css/bootstrap.css" rel="stylesheet">
 
         <!-- MetisMenu CSS -->
         <link href="<?php echo base_url() ?>assets/admin/css/metisMenu.min.css" rel="stylesheet">
@@ -27,6 +27,9 @@
         <!-- Custom Fonts -->
         <link href="<?php echo base_url() ?>assets/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css">
         <!-- Custom Fonts -->
+
+
+          <link href="<?php echo base_url() ?>css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css">
         <link href="<?php echo base_url() ?>assets/admin/css/custom-styles.css" rel="stylesheet" type="text/css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
