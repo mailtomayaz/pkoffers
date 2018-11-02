@@ -1851,3 +1851,9 @@ footer ul{
 .notfounddiv{
 display: none;
 }
+.banner-home{
+    background-image: url(../img/ballooning-sport-header-51223-800x200.jpg);
+    min-height: 400px;
+background-size: cover;
+background-position: center
+}
