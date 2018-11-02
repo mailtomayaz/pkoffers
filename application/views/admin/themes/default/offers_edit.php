@@ -88,10 +88,10 @@ $myFormatForView = date("d-m-Y", $time);
                 <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
                     <?php 
 
-$time = strtotime($result[0]->offer_end_date);
-$myFormatForView = date("d-m-Y", $time);
+$time2 = strtotime($result[0]->offer_end_date);
+$myFormatForView2 = date("d-m-Y", $time2);
                     ?>
-                    <input type='text' class="form-control"  name="offer_end_date" id="offer_end_date" value="<?php echo $myFormatForView; ?>" />
+                    <input type='text' class="form-control"  name="offer_end_date" id="offer_end_date" value="<?php echo $myFormatForView2; ?>" />
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
