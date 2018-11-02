@@ -104,7 +104,11 @@
      <div class="search-result">
         <div class="row">
             <div class="col-lg-12">
-                <div class="offer-contaner"></div>
+                <div class="offer-contaner">
+
+
+                </div>
+                 <div class="notfounddiv"><p>No offer found Please try again.</div>
                 <div class="pagination_link"></div>
             </div>
         </div>

@@ -181,11 +181,17 @@ class Offers extends Admin_Controller {
         $this->form_validation->set_rules('phone', 'phone', 'required');
         $this->form_validation->set_rules('description', 'description', 'required');
         $this->form_validation->set_rules('address', 'address', 'required');
+        $this->form_validation->set_rules('offer_start_date', 'offer_start_date', 'required');
+        $this->form_validation->set_rules('offer_end_date', 'offer_end_date', 'required');
         if ($this->form_validation->run() == FALSE) {
             $this->session->set_flashdata('error', validation_errors());
             redirect('/admin/offers/edit/' . $id, 'refresh');
         } else {
             if ($this->input->post('name')) {
+              /*  echo "<pre>";
+                print_r($this->input->post());
+                echo "</pre>";
+                die('test');*/
                 $data['id'] = $id;
                 if ($this->input->post('province_id')) {
                     $data['province_id'] = $this->input->post('province_id');
@@ -195,7 +201,16 @@ class Offers extends Admin_Controller {
                     $data['description'] = $this->input->post('description');
                     $data['address'] = $this->input->post('address');
                     $data['category_id'] = $this->input->post('category_id');
+
+                     $timestamp_start_date = date('Y-m-d H:i:s', strtotime($this->input->post('offer_start_date')));
+                 $timestamp_end_date = date('Y-m-d H:i:s', strtotime($this->input->post('offer_end_date')));
+                $data['offer_start_date'] = $timestamp_start_date;
+                $data['offer_end_date'] = $timestamp_end_date;
+                  //  $data['offer_start_date'] = $this->input->post('offer_start_date');
+                 //   $data['offer_end_date'] = $this->input->post('offer_end_date');
+                    
                     $my_date = date("Y-m-d H:i:s");
+
                     //$data['date_created'] = $my_date;
                     $data['date_updated'] = $my_date;
                     $data['user_id'] = $user_id;

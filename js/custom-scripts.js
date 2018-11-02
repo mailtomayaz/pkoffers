@@ -104,15 +104,22 @@ page_no  = $('.page_no').val();
         });
 
         request.done(function (data) {
+          $(".notfounddiv").css('display','none');
             output= '';
-            console.log(data.offers);
+           // console.log(data.offers);
 $.each(data.offers, function( key, value ) {
   
   //alert( key + ": " + value );
 
 });
  output='';
- if(data.offers){
+ if($.isEmptyObject(data.offers)){
+  $(".offer-contaner").html('');
+$(".notfounddiv").css('display','block');
+
+ }else{
+//alert(data.offers.length);
+$(".notfounddiv").css('display','none')
      output+= '<div class="row">';
    $.each(data.offers, function (key, data) {
 
@@ -135,14 +142,19 @@ output+='<div class="product-image"><img class="img-responsive" src="'+base_url+
    
 });
     output+= '</div">';
-            }
-
-            $(".offer-contaner").html(output);
+    $(".offer-contaner").html(output);
             $('.pagination_link').html(data.pagination_link);
-            console.log(data);
+            }
+           /* else {
+ $(".notfounddiv").css('display','block');
+            }*/
+
+            
+            //console.log(data);
         });
 
         request.fail(function (jqXHR, textStatus) {
+           $(".notfounddiv").css('display','block');
             alert("Request failed: " + textStatus);
         });
        

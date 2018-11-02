@@ -71,6 +71,19 @@ class Offer_search_model extends CI_Model
          $query =$this->db->get('offers');
          return $query->result();
           }
+             //if both dates mention 
+          if(empty($arrData['dateFrom']) && empty($arrData['dateTo'])){
+           // echo "both date mention ";
+         // $query = $this->db->get_where('offers', array('province_id'=>$arrData['province_id'],'category_id'=>$arrData['category_id'],'city_id'=>$arrData['city_id']));
+         $this->db->where('province_id', $arrData['province_id']);
+         $this->db->where('category_id', $arrData['category_id']);
+         $this->db->where('city_id', $arrData['city_id']);;
+        // $this->db->where('offer_start_date >=',$arrData['dateFrom']);
+        // $this->db->where('offer_end_date <=', $arrData['dateTo']);
+         $query =$this->db->get('offers');
+         return $query->result();
+          }
+          
           
          
          // return $query->result();
@@ -120,6 +133,19 @@ class Offer_search_model extends CI_Model
          $query =$this->db->get('offers');
          return $query->result();
           }
+            //if both dates mention 
+          if(empty($arrData['dateFrom']) && empty($arrData['dateTo'])){
+           // echo "both date mention ";
+         // $query = $this->db->get_where('offers', array('province_id'=>$arrData['province_id'],'category_id'=>$arrData['category_id'],'city_id'=>$arrData['city_id']));
+         $this->db->where('province_id', $arrData['province_id']);
+         $this->db->where('category_id', $arrData['category_id']);
+         $this->db->where('city_id', $arrData['city_id']);;
+        // $this->db->where('offer_start_date >=',$arrData['dateFrom']);
+        // $this->db->where('offer_end_date <=', $arrData['dateTo']);
+         $query =$this->db->get('offers');
+         return $query->result();
+          }
+          
           
          
          // return $query->result();

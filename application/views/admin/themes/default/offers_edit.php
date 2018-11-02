@@ -21,7 +21,8 @@
                 Offers
                 <a  href="<?php base_url('admin/brands') ?>" class="btn btn-warning">Go back to Offers listing</a>
             </h2>
-        </div>
+               
+
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
@@ -68,6 +69,34 @@
                                     </select>
 
                                 </div>
+                                <div class="form-group">
+          <label for="from">Offer Start Date</label>
+                <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
+                    <?php 
+
+$time = strtotime($result[0]->offer_start_date);
+$myFormatForView = date("d-m-Y", $time);
+                    ?>
+                    <input type='text' class="form-control"  name="offer_start_date" id="offer_start_date" value="<?php echo $myFormatForView; ?>"  />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+              <div class="form-group">
+          <label for="from">Offer End Date</label>
+                <div class='input-group date' id='datetimepicker1'  data-date="" data-date-format="dd-mm-yyyy">
+                    <?php 
+
+$time = strtotime($result[0]->offer_end_date);
+$myFormatForView = date("d-m-Y", $time);
+                    ?>
+                    <input type='text' class="form-control"  name="offer_end_date" id="offer_end_date" value="<?php echo $myFormatForView; ?>" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
                                 <div class="form-group">
                                     <label>Name</label>
                                     <input name='name' class="form-control" placeholder="Enter Offer Name" value="<?php echo $result[0]->name; ?>">
