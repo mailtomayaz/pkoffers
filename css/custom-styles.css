@@ -464,7 +464,7 @@ ul.social-profile li a:hover {
 
 
 
-.box {
+.wrapper-box {
     min-height: 20px;
     padding: 19px;
     margin-bottom: 20px;
@@ -1856,4 +1856,14 @@ display: none;
     min-height: 400px;
 background-size: cover;
 background-position: center
+}
+.box h2,.box p,.offer-descrption{
+text-align: center;}
+.box a:hover{
+text-decoration: none;
+}
+.box img {
+
+    height: 300px;
+
 }

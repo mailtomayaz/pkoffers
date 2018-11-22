@@ -9,11 +9,11 @@
   <section id="intro">
       <div class="wrapersiteoption">
       <div class="siteoptions">
-          <ul>
+         <!--  <ul>
               <li> <a href="<?php echo base_url(); ?>/deals"> Deals</a></li>
               <li> <a href="<?php echo base_url(); ?>/investments"> Investments</a></li>
               <li> <a href="<?php echo base_url(); ?>/charity"> Charity</a></li>
-          </ul>
+          </ul> -->
       </div>
       </div>
       <div class="banner-home"> </div>
@@ -47,22 +47,32 @@
       </div>
         <div class="row">
 <div class="box col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+  <div class="wrapper-box col-lg-11">
+<a href="<?php echo base_url(); ?>deals">
 <h2>Offers</h2>
-<div class="img-offers"><img class="img-responsive" src="<?php echo base_url(); ?>img/offers.jpg"></div>
-<div class="offer-descrption">here is offer desc</div>
 
+<div class="img-offers"><img class="img-responsive" src="<?php echo base_url(); ?>img/offers.jpg"></div>
+</a>
+<div class="offer-descrption">here is offer desc</div>
+</div>
 </div>
 <div class="box col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+  <div class="wrapper-box col-lg-11">
+<a href="<?php echo base_url(); ?>investment">
 <h2>Investment</h2>
 <div class="img-offers"><img class="img-responsive" src="<?php echo base_url(); ?>img/invenstment.jpg"></div>
+</a>
 <div class="offer-descrption">here is Investment desc</div>
-
+</div>
 </div>
 <div class="box col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
+   <div class="wrapper-box col-lg-11">
+<a href="<?php echo base_url(); ?>charity">
 <h2>Charity</h2>
-<div class="img-offers"></div>
+<div class="img-offers"><img class="img-responsive" src="<?php echo base_url(); ?>img/charity.jpg"></div>
+</a>
 <div class="offer-descrption">here is Charity desc</div>
-
+</div>
 </div>
 
         </div>
