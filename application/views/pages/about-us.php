@@ -8,7 +8,13 @@
 
 ?>
  <!-- Section about --> 
+      <div class="banner-about">
+<div class="page-title">
+        <h1> About Us</h1>
+</div>
+      </div>
     <div class="container fill">
+
   <section id="about" class="section">
  
       <div class="row">

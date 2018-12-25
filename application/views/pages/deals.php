@@ -5,20 +5,14 @@
  * and open the template in the editor.
  */
 ?>
+   <div class="banner-offers">
+<div class="page-title">
+        <h1> Offers</h1>
+</div>
+      </div>
     <div class="container fill">
  <section id="works" class="section">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="heading">
-            <h3><span>Deals</span></h3>
-          </div>
-          <div class="sub-heading">
-            <p>
-             s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
-            </p>
-          </div>
-        </div>
-      </div>
+   
       <div class="row">
         <div class="col-md-12">
           <form action="#" id="formseachdeal"> 

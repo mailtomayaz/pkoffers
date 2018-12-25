@@ -8,6 +8,11 @@
 
 ?>
  <!-- section contact -->
+   <div class="banner-contact">
+<div class="page-title">
+        <h1> Contact Us</h1>
+</div>
+      </div>
   <section id="contact" class="section">
     <div class="container">
       <div class="row">

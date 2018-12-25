@@ -38,16 +38,15 @@ class Offers extends CI_Controller {
     }
    //get all offers 
     public function getOffers() {
-        // echo "You done it";   
-      $arrData='';
-       $arrData['category_id']= $this->input->post('category_id');
-       $arrData['city_id'] = $this->input->post('city_id');
-       $arrData['province_id'] = $this->input->post('province_id');
-        $arrData['page_no'] = $this->input->post('page_no');
-        $arrData['dateFrom'] = $this->input->post('dateFrom');
-        $arrData['dateTo'] = $this->input->post('dateTo');
-
- $config = array();
+  // echo "You done it";   
+  $arrData='';
+  $arrData['category_id']= $this->input->post('category_id');
+  $arrData['city_id'] = $this->input->post('city_id');
+  $arrData['province_id'] = $this->input->post('province_id');
+  $arrData['page_no'] = $this->input->post('page_no');
+  $arrData['dateFrom'] = $this->input->post('dateFrom');
+  $arrData['dateTo'] = $this->input->post('dateTo');
+  $config = array();
   $config["base_url"] = "#";
   $config["total_rows"] = count($this->offer_search_model->getAllOffers($arrData));
   $config["per_page"] = 2;
@@ -88,7 +87,7 @@ echo json_encode($output);
       //  $total_row = count($data);//$this->offer_search_model->record_count();
         //echo $total_row;
        
-      $config['num_links'] = $total_row;
+     /* $config['num_links'] = $total_row;
       $config["total_rows"] = $total_row;
       $this->pagination->initialize($config);
       $str_links = $this->pagination->create_links();
@@ -99,9 +98,9 @@ $page = ($this->uri->segment(3)) ;
 }
 else{
 $page = 1;
-}
+}*/
 
-        $html='';
+/*        $html='';
         if($data){
             foreach($data as $option){
               //echo $option->image;
@@ -130,7 +129,7 @@ $html.='<div class="product-image"><img class="img-responsive" src="'.base_url()
               $html.= '</div>';
              
         }
-       echo $html;
+       echo $html;*/
     } 
     public function getOffersByDate() {
         // echo "You done it"; 
@@ -184,8 +183,12 @@ echo json_encode($output);
     } 
     public function showoffer($id){
 
-      $data = $this->offer_search_model->getOfferById($id);
-      print_r($data);
+      $data['result'] = $this->offer_search_model->getOfferById($id);
+     $this->load->view('templates/header');
+     $this->load->view('pages/single-offer',$data);
+     $this->load->view('templates/footer');
+  //   $this->load->view('offers');
+    // print_r($data);
 
     }
     
