@@ -24,8 +24,11 @@
             <td>
             <div class="form-group">
     <label for="email">Category:</label>
+    <?php //print_r($all_offers) ?>
     <select class="form-control" id="category" name="category">
+        <option value="">Select Category</option>
        <?php foreach($category_list as $data){ ?>
+
         <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
         <?php } ?>
     </select>
@@ -35,6 +38,7 @@
             <div class="form-group">
     <label for="email">Province:</label>
     <select class="form-control" id="provice" name="provice">
+        <option value="">Select Province</option>
         <?php foreach($provinces_list as $prov){ ?>
         <option value="<?php echo $prov->id ?>"><?php echo $prov->name ?></option>
         <?php } ?>
@@ -46,6 +50,7 @@
             <div class="form-group">
     <label for="email">City:</label>
     <select class="form-control" id="cities" name="city">
+        <option value="">Select City</option>
          <?php foreach($cities_list as $data){ ?>
         <option value="<?php echo $data->id ?>"><?php echo $data->name ?></option>
         <?php } ?>

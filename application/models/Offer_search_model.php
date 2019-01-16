@@ -145,6 +145,11 @@ class Offer_search_model extends CI_Model
          $query =$this->db->get('offers');
          return $query->result();
           }
+          //onload display all avalible offers
+            if(empty($arrData['dateFrom']) && empty($arrData['dateTo']) && empty($arrData['province_id']) && empty($arrData['category_id']) && empty($arrData['city_id']) ){
+
+              return "Show all records";
+            }
           
           
          
@@ -161,5 +166,38 @@ class Offer_search_model extends CI_Model
           $query = $this->db->get_where('offers', array('id'=>$id));
           return $query->result();
     }
+function curdate() {
+    // gets current timestamp
+    date_default_timezone_set('Asia/Karachi'); // What timezone you want to be the default value for your current date.
+    return date('Y-m-d H:i:s');
+}
+     public function getWholeOffers(){
+
+          $query = $this->db->get_where('offers', array('is_active'=>1,'offer_end_date >='=> $this->curdate() ));
+            return $query->result();
+    }
+      public function getWholeOffersWithPagination($limit,$start,$arrData){
+       $this->db->limit($limit,$start);
+       $query = $this->db->get_where('offers', array('is_active'=>1,'offer_end_date >='=> $this->curdate() ));
+       return $query->result();
 	
+}
+           public function getAllOffers_onload(){
+               
+        $query = $this->db->get_where('offers', array('is_active'=>1,'is_deleted'=>0,'offer_end_date >='=> $this->curdate() ));
+       return $query->result();
+        
+       
+          
+         
+         // return $query->result();
+    }
+        public function getOffersWithPagination($limit,$start){
+
+         $this->db->limit($limit,$start);
+         $query = $this->db->get_where('offers', array('is_active'=>1,'is_deleted'=>0,'offer_end_date >='=> $this->curdate() ));
+        return $query->result();
+
+
+       }
 }

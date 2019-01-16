@@ -3,8 +3,65 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$(document).ready(function () {
+ $(window).load(function(){
 
+
+    // call function
+
+ });
+$(document).ready(function () {
+//ajax call
+
+  function ajaxCall(){
+ page_no  = $('.page_no').val();
+ base_url = $('#base_url').val();
+        var request = $.ajax({
+            url: base_url+"index.php/offers/getOffers_onload",
+              data: {page_no:page_no},
+            type: "POST",
+            dataType: "json",
+        });
+
+        request.done(function (data) {
+                  output='';
+ if($.isEmptyObject(data.offers)){
+  $(".offer-contaner").html('');
+$(".notfounddiv").css('display','block');
+
+ }else{
+//alert(data.offers.length);
+$(".notfounddiv").css('display','none')
+     output+= '<div class="row">';
+   $.each(data.offers, function (key, data) {
+
+ output+= '<div class="col-lg-4 box-series">';
+
+output+='<div class="product-image"><img class="img-responsive" src="'+base_url+'uploads/'+data['image']+'" /></div>';
+               output+=' <h2>'+data['name']+'</h2>';
+               output+= '<div class="offer_province_name">'+data['province_id']+'</div>';
+               output+= '<div class="offer_category_name">'+data['city_id']+'</div>';
+               output+= '<div class="offer_desc">'+data['description']+'</div>';
+                 // $html.= '<div class="offer_address">'.$option->address.'</div>';
+                 //  $html.= '<div class="offer_phone">'.$option->phone.'</div>';
+                 //$html.= '<div class="offer_img">'.$option->phone.'</div>';
+                 // $html.= '<div class="offer_date_created">'.$option->date_created.'</div>';
+                 //$html.= '<div class="offer_date_expire">'.$option->date_created.'</div>';
+                output+= '<a href="'+base_url+'offers/showoffer/'+data['id']+'" class="offer_link">View Details</a>';
+                output+= '</div>';
+   
+    //console.log(data['name']);
+   
+});
+    output+= '</div">';
+    $(".offer-contaner").html(output);
+      $('.pagination_link').html(data.pagination_link);
+
+   }
+        });
+  }
+
+ajaxCall();
+  
     //datepicker
 function formatDate(date) {
     var d = new Date(date),
@@ -73,10 +130,12 @@ function formatDate(date) {
      function sendData(page){
 
      }
+     //onload populate data
+
+
+
      /*datepicker*/
-
-
-     $('.searchdeal').click(function(){
+          $('.searchdeal').click(function(){
        base_url     = $('#base_url').val();
        province_id  = $('#provice').val();    
        city_id      = $('#cities').val();
@@ -90,10 +149,7 @@ function formatDate(date) {
 page_no  = $('.page_no').val();
 
 //$('#datetimepicker1').datetimepicker({format: "YYYY-MM-DD"});
-
-
 //dateFrom2 = $('#datetimepicker1').datetimepicker().date();
-
 //dateForm4=$.format.date(dateFrom3, "dd-MM-yy");
 //alert(dateFrom3 );
         var request = $.ajax({
@@ -108,7 +164,7 @@ page_no  = $('.page_no').val();
             output= '';
            // console.log(data.offers);
 $.each(data.offers, function( key, value ) {
-  
+
   //alert( key + ": " + value );
 
 });
@@ -144,7 +200,8 @@ output+='<div class="product-image"><img class="img-responsive" src="'+base_url+
     output+= '</div">';
     $(".offer-contaner").html(output);
             $('.pagination_link').html(data.pagination_link);
-            }
+
+   }
            /* else {
  $(".notfounddiv").css('display','block');
             }*/
@@ -170,7 +227,12 @@ output+='<div class="product-image"><img class="img-responsive" src="'+base_url+
 
   $('.page_no').val(page);
 $('.pagination li').removeClass('active');
-  $('.searchdeal').trigger('click');
+if($('.page_no').length >  0){
+
+  ajaxCall();
+
+}else{
+  $('.searchdeal').trigger('click');}
   //page.parent().addClass('active');
 
   var delayInMilliseconds = 1000; //1 second

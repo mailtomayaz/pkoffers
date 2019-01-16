@@ -191,6 +191,61 @@ echo json_encode($output);
     // print_r($data);
 
     }
+    /*
+  get all offers at front end before any search 
+
+    */
+       public function getAllOffers(){
+
+      return $data['result'] = $this->offer_search_model->getWholeOffers();
+
+
+    }
+
+    //get all offers on load page
+
+        public function getOffers_onload() {
+
+      $arrData='';
+       $arrData['page_no'] = $this->input->post('page_no');
+
+ $config = array();
+  $config["base_url"] = "#";
+  $config["total_rows"] = count($this->offer_search_model->getAllOffers_onload());
+  $config["per_page"] = 9;
+  $config["uri_segment"] = 3;
+  $config["use_page_numbers"] = TRUE;
+  $config["full_tag_open"] = '<ul class="pagination onloadpagination">';
+  $config["full_tag_close"] = '</ul>';
+  $config["first_tag_open"] = '<li>';
+  $config["first_tag_close"] = '</li>';
+  $config["last_tag_open"] = '<li>';
+  $config["last_tag_close"] = '</li>';
+  $config['next_link'] = '&gt;';
+  $config["next_tag_open"] = '<li>';
+  $config["next_tag_close"] = '</li>';
+  $config["prev_link"] = "&lt;";
+  $config["prev_tag_open"] = "<li>";
+  $config["prev_tag_close"] = "</li>";
+  $config["cur_tag_open"] = "<li class='active'><a href='#'>";
+  $config["cur_tag_close"] = "</a></li>";
+  $config["num_tag_open"] = "<li>";
+  $config["num_tag_close"] = "</li>";
+  $config["num_links"] = 1;
+  $this->pagination->initialize($config);
+  $page = $arrData['page_no'];//$this->uri->segment(3);
+  //$page = 1;//$arrData['page_no'];//$this->uri->segment(3);
+  $start = ($page - 1) * $config["per_page"];
+
+  $output = array(
+   'pagination_link'  => $this->pagination->create_links(),
+   'offers'   => $this->offer_search_model->getOffersWithPagination($config["per_page"], $start)
+  );
+
+echo json_encode($output);
+    die();
+       
+    } 
     
 
 }
