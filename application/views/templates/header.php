@@ -12,7 +12,9 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap-grid.min.css">   
         <link href="<?php echo base_url(); ?>css/bootstrap-theme.css" rel="stylesheet" />
 
+
          <link href="<?php echo base_url(); ?>css/bootstrap-datetimepicker.css" rel="stylesheet" />
+           <link href="<?php echo base_url(); ?>css/bootstrap-glyphicons.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/custom-styles.css">
         <script src="<?php echo base_url(); ?>js/modernizr.custom.js"></script>
     </head>
